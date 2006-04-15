@@ -1,0 +1,12 @@
+<module>
+	<rawname>miscdests</rawname>
+	<name>Misc Destinations</name>
+	<version>1.0</version>
+	<type>setup</type>
+	<category>Basic</category>
+	<menuitems>
+		<miscdests>Misc Destinations</miscdests>
+	</menuitems>
+	<location>release/miscdests-1.0.tgz</location>
+	<info>http://freepbx.org/wiki/MiscDests</info>
+</module>
