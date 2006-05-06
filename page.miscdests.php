@@ -32,10 +32,31 @@ switch ($action) {
 	break;
 }
 
-//get meetme rooms
-//this function needs to be available to other modules (those that use goto destinations)
-//therefore we put it in globalfunctions.php
 $miscdests = miscdests_list();
+
+// Make array of feature code for <SELECT> list
+$featurecodes = featurecodes_getAllFeaturesDetailed();
+if (isset($featurecodes)) {
+	foreach ($featurecodes as $item) {
+		$moduledesc = _($item['moduledescription']);
+		$moduleena = ($item['moduleenabled'] == 1 ? true : false);
+		if ($moduleena) {
+			$featureena = ($item['featureenabled'] == 1 ? true : false);
+			if ($featureena) {
+				$featureid = $item['modulename'] . ':' . $item['featurename'];
+				$featuredesc = _($item['featuredescription']);
+				
+				$featurecodedefault = (isset($item['defaultcode']) ? $item['defaultcode'] : '');
+				$featurecodecustom = (isset($item['customcode']) ? $item['customcode'] : '');
+				$featureactualcode = ($featurecodecustom != '' ? $featurecodecustom : $featurecodedefault);
+				
+				$fclist[$featureid] = $featuredesc;
+			}
+		}
+	}
+	asort($fclist);
+}
+
 ?>
 
 </div>
@@ -62,6 +83,8 @@ if ($action == 'delete') {
 		//get details for this meetme
 		$thisMiscDest = miscdests_get($extdisplay);
 		//create variables
+		$description = "";
+		$destdial = "";
 		extract($thisMiscDest);
 	}
 
@@ -90,12 +113,27 @@ if ($action == 'delete') {
 	</tr>
 	<tr>
 		<td><a href="#" class="info"><?php echo _("dial:")?><span><?php echo _("Enter the digits to dial for this Misc Destination.")?></span></a></td>
-		<td><input type="text" name="destdial" value="<?php echo (isset($destdial) ? $destdial : ''); ?>"></td>
+		<td>
+			<input type="text" name="destdial" value="<?php echo (isset($destdial) ? $destdial : ''); ?>">&nbsp;&nbsp;
+			<?php if (isset($fclist)) { ?>
+			<select id="fc" onchange="fc_onchange();">
+			<option value="">--<?php echo _("featurecode"); ?>--</option>
+			<?php
+			foreach ($fclist as $fckey => $fcdesc) {
+				?>
+				<option value="{<?php echo $fckey; ?>}"><?php echo _($fcdesc); ?></option>
+				<?php
+			}
+			?>
+			</select>
+			<?php } ?>
+		</td>
 	</tr>
 
 	
 	<tr>
-		<td colspan="2"><br><h6><input name="Submit" type="submit" value="<?php echo _("Submit Changes")?>"></h6></td>		
+		<td colspan="2"><br><h6><input name="Submit" type="submit" value="<?php echo _("Submit Changes")?>"></h6>
+		</td>
 	</tr>
 	</table>
 <script language="javascript">
@@ -117,13 +155,44 @@ function editMD_onsubmit()
 	defaultEmptyOK = false;
 	if (!isAlphanumeric(theForm.description.value))
 		return warnInvalid(theForm.description, msgInvalidDescription);
+
+	// go thru text and remove the {} bits so we only check the actual dial digits
+	var fldText = theForm.destdial.value;
+	var chkText = "";
+	
+	if ( (fldText.indexOf("{") > -1) && (fldText.indexOf("}") > -1) ) { // has one or more sets of {mod:fc}
 		
-	if (!isDialDigits(theForm.destdial.value))
+		var inbraces = false;
+		for (var i=0; i<fldText.length; i++) {
+			if ( (fldText.charAt(i) == "{") && (inbraces == false) ) {
+				inbraces = true;
+			} else if ( (fldText.charAt(i) == "}") && (inbraces == true) ) {
+				inbraces = false;
+			} else if ( inbraces == false ) {
+				chkText += fldText.charAt(i);
+			}
+		}
+		
+		// if there is nothing in chkText but something in fldText
+		// then the field must contain a featurecode only, therefore
+		// there really is something in thre!
+		if ( (chkText == "") & (fldText != "") )
+			chkText = "0";
+			
+	} else {
+		chkText = fldText;
+	}
+	// now do the check using the chkText var made above
+	if (!isDialDigits(chkText))
 		return warnInvalid(theForm.destdial, msgInvalidDial);
-		
+	
 	return true;
 }
 
+function fc_onchange() {
+	theForm.destdial.value = theForm.fc.value;
+	theForm.fc.selectedIndex = 0;
+}
 //-->
 </script>
 	</form>

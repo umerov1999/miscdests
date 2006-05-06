@@ -24,6 +24,8 @@ function miscdests_get_config($engine) {
 	switch($engine) {
 		case "asterisk":
 			$contextname = 'ext-miscdests';
+			$fctemplate = '/\{(.+)\:(.+)\}/';
+			
 			if(is_array($destlist = miscdests_list())) {
 				
 				foreach($destlist as $item) {
@@ -33,6 +35,10 @@ function miscdests_get_config($engine) {
 					$miscdescription = $miscdest['description'];
 					$miscdialdest = $miscdest['destdial'];
 
+					// exchange {mod:fc} for the relevent feature codes in $miscdialdest
+					$miscdialdest = preg_replace_callback($fctemplate, "miscdests_lookupfc", $miscdialdest);
+
+					// write out the dialplan details
 					$ext->add($contextname, $miscid, '', new ext_noop('MiscDest: '.$miscdescription));
 					$ext->add($contextname, $miscid, '', new ext_dial('Local/'.$miscdialdest.'@from-internal', ''));
 					
@@ -73,4 +79,12 @@ function miscdests_update($id, $description, $destdial){
 	$results = sql("UPDATE miscdests SET description = ".sql_formattext($description).", destdial = ".sql_formattext($destdial)." WHERE id = ".$id);
 }
 
+function miscdests_lookupfc($matches) {
+	$modulename = $matches[1];
+	$featurename = $matches[2];
+
+	$fcc = new featurecode($modulename, $featurename);
+	$fc = $fcc->getCodeActive();
+	return $fc;
+}
 ?>

@@ -1,7 +1,7 @@
 <module>
 	<rawname>miscdests</rawname>
 	<name>Misc Destinations</name>
-	<version>1.0</version>
+	<version>1.1.0</version>
 	<type>setup</type>
 	<category>Basic</category>
 	<menuitems>
