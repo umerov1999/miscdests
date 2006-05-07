@@ -7,7 +7,7 @@
 	<menuitems>
 		<miscdests>Misc Destinations</miscdests>
 	</menuitems>
-	<location>release/miscdests-1.1.0.tgz</location>
+	<location>release/miscdests-1.1.1.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-MiscDests</info>
-	<md5sum>6a58d590e88550fd4af096d6f596621e</md5sum>
+	<md5sum>bee2b4c7862152e5b2077e1fb96c2bad</md5sum>
 </module>
