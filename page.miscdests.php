@@ -50,7 +50,7 @@ if (isset($featurecodes)) {
 				$featurecodecustom = (isset($item['customcode']) ? $item['customcode'] : '');
 				$featureactualcode = ($featurecodecustom != '' ? $featurecodecustom : $featurecodedefault);
 				
-				$fclist[$featureid] = $featuredesc;
+				$fclist[$featureid] = $featuredesc." ($featureactualcode)";
 			}
 		}
 	}
