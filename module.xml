@@ -1,13 +1,13 @@
 <module>
 	<rawname>miscdests</rawname>
 	<name>Misc Destinations</name>
-	<version>1.1.1</version>
+	<version>1.1.2</version>
 	<type>setup</type>
 	<category>Basic</category>
 	<menuitems>
 		<miscdests>Misc Destinations</miscdests>
 	</menuitems>
-	<location>release//2.2/miscdests-1.1.1.tgz</location>
+	<location>release/2.2/miscdests-1.1.2.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-MiscDests</info>
-	<md5sum>7647a926e64e8f3ffdc75d4b4741c4bb</md5sum>
+	<md5sum>42b49874879aadd8d02336adfdbd64e2</md5sum>
 </module>
