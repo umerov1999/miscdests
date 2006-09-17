@@ -38,7 +38,7 @@ $miscdests = miscdests_list();
 $featurecodes = featurecodes_getAllFeaturesDetailed();
 if (isset($featurecodes)) {
 	foreach ($featurecodes as $item) {
-		$moduledesc = _($item['moduledescription']);
+		$moduledesc =isset($item['moduledescription'])?_($item['moduledescription']):null;
 		$moduleena = ($item['moduleenabled'] == 1 ? true : false);
 		if ($moduleena) {
 			$featureena = ($item['featureenabled'] == 1 ? true : false);
