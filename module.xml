@@ -3,7 +3,8 @@
 	<name>Misc Destinations</name>
 	<version>1.1.2</version>
 	<type>setup</type>
-	<category>Basic</category>
+	<category>Inbound Call Control</category>
+	<description>Allows creating destinations that dial any local number (extensions, feature codes, outside phone numbers) that can be used by other modules (eg, IVR, time conditions) as a call destination.</descriptions>
 	<menuitems>
 		<miscdests>Misc Destinations</miscdests>
 	</menuitems>
