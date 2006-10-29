@@ -62,7 +62,7 @@ if (isset($featurecodes)) {
 </div>
 
 <!-- right side menu -->
-<div class="rnav">
+<div class="rnav"><ul>
     <li><a id="<?php echo ($extdisplay=='' ? 'current':'') ?>" href="config.php?display=<?php echo urlencode($dispnum)?>"><?php echo _("Add Misc Destination")?></a></li>
 <?php
 if (isset($miscdests)) {
@@ -71,7 +71,7 @@ if (isset($miscdests)) {
 	}
 }
 ?>
-</div>
+</ul></div>
 
 
 <div class="content">
