@@ -21,12 +21,12 @@ switch ($action) {
 	case "add":
 		miscdests_add($_REQUEST['description'],$_REQUEST['destdial']);
 		needreload();
-		redirect_standard('id');
+		redirect_standard();
 	break;
 	case "delete":
 		miscdests_del($extdisplay);
 		needreload();
-		redirect_standard('id');
+		redirect_standard();
 	break;
 	case "edit":  //just delete and re-add
 		miscdests_update($extdisplay,$_REQUEST['description'],$_REQUEST['destdial']);
