@@ -92,10 +92,14 @@ if ($action == 'delete') {
 	}
 
 	$delURL = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&action=delete';
-?>
+
+
+$helptext = _("Misc Destinations are for adding destinations that can be used by other freePBX modules, generally used to route incoming calls. If you want to create feature codes that can be dialed by internal users and go to various destinations, please see the <strong>Misc Applications</strong> module.");
+echo "<p>".$helptext."</p>\n";
+
 
 	
-<?php		if ($extdisplay){ ?>
+		if ($extdisplay){ ?>
 	<h2><?php echo _("Misc Destination:")." ". $description; ?></h2>
 	<p><a href="<?php echo $delURL ?>"><?php echo _("Delete Misc Destination")?> '<?php echo $description; ?>'</a></p>
 <?php		} else { ?>
@@ -115,12 +119,12 @@ if ($action == 'delete') {
 		<td><input type="text" name="description" value="<?php echo (isset($description) ? $description : ''); ?>"></td>
 	</tr>
 	<tr>
-		<td><a href="#" class="info"><?php echo _("dial:")?><span><?php echo _("Enter the digits to dial for this Misc Destination.")?></span></a></td>
+		<td><a href="#" class="info"><?php echo _("dial:")?><span><?php echo _("Enter the number this destination will simulate dialing, exactly as you would dial it from an internal phone. When you route a call to this destination, it will be as if the caller dialed this number from an internal phone.") ?></span></a></td>
 		<td>
 			<input type="text" name="destdial" value="<?php echo (isset($destdial) ? $destdial : ''); ?>">&nbsp;&nbsp;
 			<?php if (isset($fclist)) { ?>
 			<select id="fc" onchange="fc_onchange();">
-			<option value="">--<?php echo _("featurecode"); ?>--</option>
+			<option value="">--<?php echo _("featurecode shortcuts"); ?>--</option>
 			<?php
 			foreach ($fclist as $fckey => $fcdesc) {
 				?>

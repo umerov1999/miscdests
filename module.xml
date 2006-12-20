@@ -1,15 +1,18 @@
 <module>
 	<rawname>miscdests</rawname>
 	<name>Misc Destinations</name>
-	<version>1.3</version>
+	<version>1.3.1</version>
 	<type>setup</type>
 	<category>Inbound Call Control</category>
 	<description>Allows creating destinations that dial any local number (extensions, feature codes, outside phone numbers) that can be used by other modules (eg, IVR, time conditions) as a call destination.</description>
-	<changelog>*1.3* First release for FreePBX 2.2 - Fixed GUI issues</changelog>
+	<changelog>
+		*1.3.1* Updated help text
+		*1.3* First release for FreePBX 2.2 - Fixed GUI issues
+	</changelog>
 	<menuitems>
 		<miscdests>Misc Destinations</miscdests>
 	</menuitems>
-	<location>release/2.2/miscdests-1.3.tgz</location>
+	<location>release/2.2/miscdests-1.3.1.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-MiscDests</info>
-	<md5sum>cc88b23628fc34082000b08ca24d50be</md5sum>
+	<md5sum>8315cd64cafe01da12372bcef02a7bb3</md5sum>
 </module>
