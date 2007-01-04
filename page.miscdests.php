@@ -95,14 +95,15 @@ if ($action == 'delete') {
 
 
 $helptext = _("Misc Destinations are for adding destinations that can be used by other freePBX modules, generally used to route incoming calls. If you want to create feature codes that can be dialed by internal users and go to various destinations, please see the <strong>Misc Applications</strong> module.");
-echo "<p>".$helptext."</p>\n";
 
 
 	
 		if ($extdisplay){ ?>
 	<h2><?php echo _("Misc Destination:")." ". $description; ?></h2>
 	<p><a href="<?php echo $delURL ?>"><?php echo _("Delete Misc Destination")?> '<?php echo $description; ?>'</a></p>
-<?php		} else { ?>
+<?php		} else { 
+			echo "<h2>"._("Misc Destinations")."</h2>";
+			echo "<p>".$helptext."</p>\n"; ?>
 	<h2><?php echo _("Add Misc Destination"); ?></h2>
 <?php		}
 ?>
