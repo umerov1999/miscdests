@@ -94,6 +94,8 @@ if ($action == 'delete') {
 	$delURL = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&action=delete';
 
 
+echo "<h2>"._("Misc Destinations")."</h2>";
+echo "<h3>"._("Instructions")."</h3>";
 $helptext = _("Misc Destinations are for adding destinations that can be used by other freePBX modules, generally used to route incoming calls. If you want to create feature codes that can be dialed by internal users and go to various destinations, please see the <strong>Misc Applications</strong> module.");
 
 
