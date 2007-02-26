@@ -40,7 +40,7 @@ function miscdests_get_config($engine) {
 
 					// write out the dialplan details
 					$ext->add($contextname, $miscid, '', new ext_noop('MiscDest: '.$miscdescription));
-					$ext->add($contextname, $miscid, '', new ext_dial('Local/'.$miscdialdest.'@from-internal', ''));
+					$ext->add($contextname, $miscid, '', new ext_goto('from-internal,'.$miscdialdest.',1', ''));
 					
 				}
 			}
