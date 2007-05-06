@@ -1,1 +1,1 @@
-DROP TABLE IF NOT EXISTS `miscdests`;
+DROP TABLE IF EXISTS `miscdests`;
