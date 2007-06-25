@@ -1,11 +1,12 @@
 <module>
 	<rawname>miscdests</rawname>
 	<name>Misc Destinations</name>
-	<version>1.3.4</version>
+	<version>1.3.4.1</version>
 	<type>setup</type>
 	<category>Inbound Call Control</category>
 	<description>Allows creating destinations that dial any local number (extensions, feature codes, outside phone numbers) that can be used by other modules (eg, IVR, time conditions) as a call destination.</description>
 	<changelog>
+		*1.3.4.1* changed freePBX to FreePBX
 		*1.3.4* destination changed from Dial(Local/nnn@from-internal) to Goto(from-internal,nnn,1), no reason a new channel should be created
 		*1.3.3* Minor formatting changes
 		*1.3.2* Add he_IL translation
@@ -15,7 +16,7 @@
 	<menuitems>
 		<miscdests>Misc Destinations</miscdests>
 	</menuitems>
-	<location>release/2.3/miscdests-1.3.4.tgz</location>
+	<location>release/2.3/miscdests-1.3.4.1.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-MiscDests</info>
-	<md5sum>5dc5941394433459f0d506f31770b564</md5sum>
+	<md5sum>b593cc7d1f2086fd847e8356e51b0161</md5sum>
 </module>
