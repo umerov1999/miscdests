@@ -13,7 +13,7 @@ $sql = "CREATE TABLE IF NOT EXISTS miscdests (
 
 $check = $db->query($sql);
 if(DB::IsError($check)) {
-	die("Can not create miscdests table\n");
+	die_freepbx("Can not create miscdests table\n");
 }
 
 ?>
