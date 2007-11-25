@@ -15,6 +15,30 @@ function miscdests_destinations() {
 	}
 }
 
+function miscdests_getdest($exten) {
+	return array('ext-miscdests,'.$exten.',1');
+}
+
+function miscdests_getdestinfo($dest) {
+	global $active_modules;
+
+	if (substr(trim($dest),0,14) == 'ext-miscdests,') {
+		$exten = explode(',',$dest);
+		$exten = $exten[1];
+		$thisexten = miscdests_get($exten);
+		if (empty($thisexten)) {
+			return array();
+		} else {
+			//$type = isset($active_modules['announcement']['type'])?$active_modules['announcement']['type']:'setup';
+			return array('description' => 'Misc Destination : '.$thisexten['description'],
+			             'edit_url' => 'config.php?display=miscdests&id='.urlencode($exten),
+								  );
+		}
+	} else {
+		return false;
+	}
+}
+
 /* 	Generates dialplan for conferences
 	We call this with retrieve_conf
 */

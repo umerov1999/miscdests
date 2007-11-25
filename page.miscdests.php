@@ -102,12 +102,24 @@ $helptext = _("Misc Destinations are for adding destinations that can be used by
 	
 		if ($extdisplay){ ?>
 	<h2><?php echo _("Misc Destination:")." ". $description; ?></h2>
-	<p><a href="<?php echo $delURL ?>"><?php echo _("Delete Misc Destination")?> '<?php echo $description; ?>'</a></p>
-<?php		} else { 
+	<a href="<?php echo $delURL ?>"><?php echo _("Delete Misc Destination")?> '<?php echo $description; ?>'</a>
+
+<?php
+			$usage_list = framework_display_destination_usage(miscdests_getdest($extdisplay));
+			if (!empty($usage_list)) {
+?>
+				<br /><a href="#" class="info"><?php echo $usage_list['text']?>:<span><?php echo $usage_list['tooltip']?></span></a>
+<?php
+			}
+?>
+
+<?php		
+		} else { 
 			echo "<h2>"._("Misc Destinations")."</h2>";
 			echo "<p>".$helptext."</p>\n"; ?>
 	<h2><?php echo _("Add Misc Destination"); ?></h2>
-<?php		}
+<?php		
+		}
 ?>
 	<form autocomplete="off" name="editMD" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return editMD_onsubmit();">
 	<input type="hidden" name="display" value="<?php echo $dispnum?>">
