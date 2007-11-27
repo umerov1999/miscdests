@@ -94,8 +94,6 @@ if ($action == 'delete') {
 	$delURL = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&action=delete';
 
 
-echo "<h2>"._("Misc Destinations")."</h2>";
-echo "<h3>"._("Instructions")."</h3>";
 $helptext = _("Misc Destinations are for adding destinations that can be used by other FreePBX modules, generally used to route incoming calls. If you want to create feature codes that can be dialed by internal users and go to various destinations, please see the <strong>Misc Applications</strong> module.");
 
 
@@ -111,14 +109,9 @@ $helptext = _("Misc Destinations are for adding destinations that can be used by
 				<br /><a href="#" class="info"><?php echo $usage_list['text']?>:<span><?php echo $usage_list['tooltip']?></span></a>
 <?php
 			}
-?>
-
-<?php		
 		} else { 
-			echo "<h2>"._("Misc Destinations")."</h2>";
-			echo "<p>".$helptext."</p>\n"; ?>
-	<h2><?php echo _("Add Misc Destination"); ?></h2>
-<?php		
+			echo "<h2>"._("Add Misc Destination")."</h2>";
+			echo $helptext;
 		}
 ?>
 	<form autocomplete="off" name="editMD" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return editMD_onsubmit();">
