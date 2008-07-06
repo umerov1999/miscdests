@@ -124,14 +124,14 @@ $helptext = _("Misc Destinations are for adding destinations that can be used by
 <?php		} ?>
 	<tr>
 		<td><a href="#" class="info"><?php echo _("description:")?><span><?php echo _("Give this Misc Destination a brief name to help you identify it.")?></span></a></td>
-		<td><input type="text" name="description" value="<?php echo (isset($description) ? $description : ''); ?>"></td>
+		<td><input type="text" name="description" value="<?php echo (isset($description) ? $description : ''); ?>" tabindex="<?php echo ++$tabindex;?>"></td>
 	</tr>
 	<tr>
 		<td><a href="#" class="info"><?php echo _("dial:")?><span><?php echo _("Enter the number this destination will simulate dialing, exactly as you would dial it from an internal phone. When you route a call to this destination, it will be as if the caller dialed this number from an internal phone.") ?></span></a></td>
 		<td>
-			<input type="text" name="destdial" value="<?php echo (isset($destdial) ? $destdial : ''); ?>">&nbsp;&nbsp;
+			<input type="text" name="destdial" value="<?php echo (isset($destdial) ? $destdial : ''); ?>" tabindex="<?php echo ++$tabindex;?>">&nbsp;&nbsp;
 			<?php if (isset($fclist)) { ?>
-			<select id="fc" onchange="fc_onchange();">
+			<select id="fc" onchange="fc_onchange();" tabindex="<?php echo ++$tabindex;?>">
 			<option value="">--<?php echo _("featurecode shortcuts"); ?>--</option>
 			<?php
 			foreach ($fclist as $fckey => $fcdesc) {
@@ -147,7 +147,7 @@ $helptext = _("Misc Destinations are for adding destinations that can be used by
 
 	
 	<tr>
-		<td colspan="2"><br><h6><input name="Submit" type="submit" value="<?php echo _("Submit Changes")?>"></h6>
+		<td colspan="2"><br><h6><input name="Submit" type="submit" value="<?php echo _("Submit Changes")?>" tabindex="<?php echo ++$tabindex;?>"></h6>
 		</td>
 	</tr>
 	</table>
