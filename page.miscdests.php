@@ -91,20 +91,23 @@ if ($action == 'delete') {
 		extract($thisMiscDest);
 	}
 
-	$delURL = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&action=delete';
-
-
-$helptext = _("Misc Destinations are for adding destinations that can be used by other FreePBX modules, generally used to route incoming calls. If you want to create feature codes that can be dialed by internal users and go to various destinations, please see the <strong>Misc Applications</strong> module.");
+	$helptext = _("Misc Destinations are for adding destinations that can be used by other FreePBX modules, generally used to route incoming calls. If you want to create feature codes that can be dialed by internal users and go to various destinations, please see the <strong>Misc Applications</strong> module.");
 
 
 	
 		if ($extdisplay){ ?>
 	<h2><?php echo _("Misc Destination:")." ". $description; ?></h2>
-	<a href="<?php echo $delURL ?>"><?php echo _("Delete Misc Destination")?> '<?php echo $description; ?>'</a>
-
 <?php
 			$usage_list = framework_display_destination_usage(miscdests_getdest($extdisplay));
 			if (!empty($usage_list)) {
+
+				$delURL = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&action=delete';
+				$tlabel = sprintf(_("Delete Misc Destination %s"),$description);
+				$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/core_delete.png"/>&nbsp;'.$tlabel.'</span>';
+?>
+				<a href="<?php echo $delURL ?>"><?php echo $label; ?></a>
+<?php
+
 ?>
 				<br /><a href="#" class="info"><?php echo $usage_list['text']?>:<span><?php echo $usage_list['tooltip']?></span></a>
 <?php
