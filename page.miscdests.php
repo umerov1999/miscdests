@@ -99,15 +99,13 @@ if ($action == 'delete') {
 	<h2><?php echo _("Misc Destination:")." ". $description; ?></h2>
 <?php
 			$usage_list = framework_display_destination_usage(miscdests_getdest($extdisplay));
-			if (!empty($usage_list)) {
-
-				$delURL = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&action=delete';
-				$tlabel = sprintf(_("Delete Misc Destination %s"),$description);
-				$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/core_delete.png"/>&nbsp;'.$tlabel.'</span>';
+			$delURL = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&action=delete';
+			$tlabel = sprintf(_("Delete Misc Destination %s"),$description);
+			$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/core_delete.png"/>&nbsp;'.$tlabel.'</span>';
 ?>
-				<a href="<?php echo $delURL ?>"><?php echo $label; ?></a>
+			<a href="<?php echo $delURL ?>"><?php echo $label; ?></a>
 <?php
-
+			if (!empty($usage_list)) {
 ?>
 				<br /><a href="#" class="info"><?php echo $usage_list['text']?>:<span><?php echo $usage_list['tooltip']?></span></a>
 <?php
