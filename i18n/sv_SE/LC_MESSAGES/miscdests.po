@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: FreePBX miscdests\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-16 16:38+0200\n"
-"PO-Revision-Date: 2008-09-16 19:59+0100\n"
+"PO-Revision-Date: 2008-09-16 20:08+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgstr "borttagen"
 
 #: page.miscdests.php:94
 msgid "Misc Destinations are for adding destinations that can be used by other FreePBX modules, generally used to route incoming calls. If you want to create feature codes that can be dialed by internal users and go to various destinations, please see the <strong>Misc Applications</strong> module."
-msgstr ""
+msgstr "Övriga applikationer är till för att lägga till destinationer som kan användas av andra FreePBX moduler, mest till för att koppla inkommande samtal. Om du vill använda en funktionskod som kan användas av interna användare som ska gå till olika destinatioer, använd då <strong>Övriga applikationer</strong>."
 
 #: page.miscdests.php:99
 msgid "Misc Destination:"
@@ -74,7 +74,7 @@ msgstr "Skriv in det nummer som denna destination ska slå, exakt som om du skul
 
 #: page.miscdests.php:136
 msgid "featurecode shortcuts"
-msgstr ""
+msgstr "snabbval för funktionskoder"
 
 #: page.miscdests.php:151
 msgid "Submit Changes"
