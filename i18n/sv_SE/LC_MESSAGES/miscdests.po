@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX miscdests\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-16 16:38+0200\n"
-"PO-Revision-Date: 2008-09-17 10:39+0100\n"
+"POT-Creation-Date: 2008-10-05 12:13+0200\n"
+"PO-Revision-Date: 2008-10-10 22:50+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,13 +17,10 @@ msgstr ""
 "X-Poedit-Language: Swedish\n"
 "X-Poedit-Country: SWEDEN\n"
 
-#: page.miscdests.php:44
-msgid "moduledescription"
-msgstr ""
-
-#: page.miscdests.php:50
-msgid "featuredescription"
-msgstr ""
+#: functions.inc.php:33
+#, php-format
+msgid "Misc Destination: %s"
+msgstr "Övrig destination: %s"
 
 #: page.miscdests.php:69
 #: page.miscdests.php:114
