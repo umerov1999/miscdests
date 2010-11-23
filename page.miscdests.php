@@ -37,29 +37,6 @@ switch ($action) {
 
 $miscdests = miscdests_list();
 
-// Make array of feature code for <SELECT> list
-$featurecodes = featurecodes_getAllFeaturesDetailed();
-if (isset($featurecodes)) {
-	foreach ($featurecodes as $item) {
-		$moduledesc =isset($item['moduledescription'])?_($item['moduledescription']):null;
-		$moduleena = ($item['moduleenabled'] == 1 ? true : false);
-		if ($moduleena) {
-			$featureena = ($item['featureenabled'] == 1 ? true : false);
-			if ($featureena) {
-				$featureid = $item['modulename'] . ':' . $item['featurename'];
-				$featuredesc = _($item['featuredescription']);
-				
-				$featurecodedefault = (isset($item['defaultcode']) ? $item['defaultcode'] : '');
-				$featurecodecustom = (isset($item['customcode']) ? $item['customcode'] : '');
-				$featureactualcode = ($featurecodecustom != '' ? $featurecodecustom : $featurecodedefault);
-				
-				$fclist[$featureid] = $featuredesc." ($featureactualcode)";
-			}
-		}
-	}
-	asort($fclist);
-}
-
 ?>
 
 </div>
@@ -91,9 +68,7 @@ if ($action == 'delete') {
 		extract($thisMiscDest);
 	}
 
-	$helptext = _("Misc Destinations are for adding destinations that can be used by other FreePBX modules, generally used to route incoming calls. If you want to create feature codes that can be dialed by internal users and go to various destinations, please see the <strong>Misc Applications</strong> module.");
-
-
+	$helptext = _("Misc Destinations are for adding destinations that can be used by other FreePBX modules, generally used to route incoming calls. If you want to create feature codes that can be dialed by internal users and go to various destinations, please see the <strong>Misc Applications</strong> module.").' '._('If you need access to a Feature Code, such as *98 to dial voicemail or a Time Condition toggle, these destinations are now provided as Feature Code Admin destinations. For upgrade compatibility, if you previously had configured such a destination, it will still work but the Feature Code short cuts select list is not longer provided.');
 	
 		if ($extdisplay){ ?>
 	<h2><?php echo _("Misc Destination:")." ". $description; ?></h2>
@@ -131,22 +106,8 @@ if ($action == 'delete') {
 		<td><a href="#" class="info"><?php echo _("Dial:")?><span><?php echo _("Enter the number this destination will simulate dialing, exactly as you would dial it from an internal phone. When you route a call to this destination, it will be as if the caller dialed this number from an internal phone.") ?></span></a></td>
 		<td>
 			<input type="text" name="destdial" value="<?php echo (isset($destdial) ? $destdial : ''); ?>" tabindex="<?php echo ++$tabindex;?>">&nbsp;&nbsp;
-			<?php if (isset($fclist)) { ?>
-			<select id="fc" onchange="fc_onchange();" tabindex="<?php echo ++$tabindex;?>">
-			<option value="">--<?php echo _("featurecode shortcuts"); ?>--</option>
-			<?php
-			foreach ($fclist as $fckey => $fcdesc) {
-				?>
-				<option value="{<?php echo $fckey; ?>}"><?php echo _($fcdesc); ?></option>
-				<?php
-			}
-			?>
-			</select>
-			<?php } ?>
 		</td>
 	</tr>
-
-	
 	<tr>
 		<td colspan="2"><br><h6><input name="Submit" type="submit" value="<?php echo _("Submit Changes")?>" tabindex="<?php echo ++$tabindex;?>"></h6>
 		</td>
@@ -203,11 +164,6 @@ function editMD_onsubmit()
 		return warnInvalid(theForm.destdial, msgInvalidDial);
 	
 	return true;
-}
-
-function fc_onchange() {
-	theForm.destdial.value = theForm.fc.value;
-	theForm.fc.selectedIndex = 0;
 }
 //-->
 </script>
