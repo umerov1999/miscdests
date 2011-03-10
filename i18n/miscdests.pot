@@ -14,18 +14,18 @@
 #    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
 #
 # FreePBX language template for miscdests
-# Copyright (C) 2008, 2009, 2010 Bandwith.com
+# Copyright (C) 2008, 2009, 2010, 2011 Bandwith.com
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 17:34+0100\n"
+"POT-Creation-Date: 2011-03-10 22:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #, php-format
@@ -47,12 +47,6 @@ msgid ""
 "time conditions) as a call destination."
 msgstr ""
 
-msgid "moduledescription"
-msgstr ""
-
-msgid "featuredescription"
-msgstr ""
-
 msgid "Add Misc Destination"
 msgstr ""
 
@@ -67,6 +61,14 @@ msgid ""
 "FreePBX modules, generally used to route incoming calls. If you want to "
 "create feature codes that can be dialed by internal users and go to various "
 "destinations, please see the <strong>Misc Applications</strong> module."
+msgstr ""
+
+msgid ""
+"If you need access to a Feature Code, such as *98 to dial voicemail or a "
+"Time Condition toggle, these destinations are now provided as Feature Code "
+"Admin destinations. For upgrade compatibility, if you previously had "
+"configured such a destination, it will still work but the Feature Code short "
+"cuts select list is not longer provided."
 msgstr ""
 
 msgid "Misc Destination:"
@@ -93,9 +95,6 @@ msgid ""
 "would dial it from an internal phone. When you route a call to this "
 "destination, it will be as if the caller dialed this number from an internal "
 "phone."
-msgstr ""
-
-msgid "featurecode shortcuts"
 msgstr ""
 
 msgid "Submit Changes"
