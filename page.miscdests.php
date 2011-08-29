@@ -39,7 +39,6 @@ $miscdests = miscdests_list();
 
 ?>
 
-</div>
 
 <!-- right side menu -->
 <div class="rnav"><ul>
@@ -53,8 +52,6 @@ if (isset($miscdests)) {
 ?>
 </ul></div>
 
-
-<div class="content">
 <?php
 if ($action == 'delete') {
 	echo '<br><h3>'._("Misc Destination").' '.$extdisplay.' '._("deleted").'!</h3><br><br><br><br><br><br><br><br>';
