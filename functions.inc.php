@@ -1,4 +1,5 @@
 <?php /* $Id: $ */
+if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
 // returns a associative arrays with keys 'destination' and 'description'
 function miscdests_destinations() {
