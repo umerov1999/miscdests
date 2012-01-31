@@ -19,6 +19,6 @@
 	<menuitems>
 		<miscdests>Misc Destinations</miscdests>
 	</menuitems>
-	<location>release/2.10/miscdests-2.10.0.0.tgz</location>
-	<md5sum>a47bf08e5dff508f3174b2806ce40f22</md5sum>
+	<location>release/2.10/miscdests-2.10.0.1.tgz</location>
+	<md5sum>389ded48bed85cf45e74b544e69bf25e</md5sum>
 </module>
