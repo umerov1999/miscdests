@@ -20,9 +20,9 @@ $dispnum = "miscdests"; //used for switch on config.php
 
 switch ($action) {
 	case "add":
-		miscdests_add($_REQUEST['description'],$_REQUEST['destdial']);
+		$_REQUEST['id'] = miscdests_add($_REQUEST['description'],$_REQUEST['destdial']);
 		needreload();
-		redirect_standard();
+		redirect_standard('id');
 	break;
 	case "delete":
 		miscdests_del($extdisplay);
