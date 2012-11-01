@@ -98,6 +98,7 @@ function miscdests_del($id){
 
 function miscdests_add($description, $destdial){
 	global $db;
+	global $amp_conf;
 	$results = sql("INSERT INTO miscdests (description, destdial) VALUES (".sql_formattext($description).",".sql_formattext($destdial).")");
   $id = $amp_conf["AMPDBENGINE"] == "sqlite3" ? sqlite_last_insert_rowid($db->connection) : mysql_insert_id($db->connection);
 	return($id);
