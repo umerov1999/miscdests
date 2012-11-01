@@ -25,6 +25,6 @@
 			<display>miscdests</display>
 		</miscdests>
  	</popovers>
-	<location>release/2.10/miscdests-2.10.0.1.tgz</location>
-	<md5sum>389ded48bed85cf45e74b544e69bf25e</md5sum>
+	<location>release/2.11/miscdests-2.11.0.0.tgz</location>
+	<md5sum>eebecd953f09ca3f1446dc14e6dda992</md5sum>
 </module>
