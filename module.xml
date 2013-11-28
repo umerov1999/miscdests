@@ -21,4 +21,4 @@
 	</menuitems>
 	<location>release/2.10/miscdests-2.10.0.1.tgz</location>
 	<md5sum>389ded48bed85cf45e74b544e69bf25e</md5sum>
-</module>
+<supported><version>2.10</version></supported></module>
