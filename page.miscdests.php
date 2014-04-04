@@ -128,6 +128,9 @@ function editMD_onsubmit()
 	var msgInvalidDial = "<?php echo _('Please enter a valid Dial string'); ?>";
 	
 	defaultEmptyOK = false;
+	var sizeDisplayName = "<?php echo miscdests_get_field_size('description', 100); ?>";
+	if (!isCorrectLength(theForm.description.value, sizeDisplayName))
+                return warnInvalid(theForm.description, "<?php echo _('The description provided is too long.'); ?>")
 	if (!isAlphanumeric(theForm.description.value))
 		return warnInvalid(theForm.description, msgInvalidDescription);
 
