@@ -60,7 +60,7 @@ if ($action == 'delete') {
 	<h2><?php echo _("Misc Destination:")." ". $description; ?></h2>
 <?php
 			$usage_list = framework_display_destination_usage(miscdests_getdest($extdisplay));
-			$delURL = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&action=delete';
+			$delURL = '?'.$_SERVER['QUERY_STRING'].'&action=delete';
 			$tlabel = sprintf(_("Delete Misc Destination %s"),$description);
 			$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/core_delete.png"/>&nbsp;'.$tlabel.'</span>';
 ?>
@@ -122,7 +122,7 @@ function editMD_onsubmit()
 		if (!isCorrectLength(theForm.description.value, sizeDisplayName))
 			return warnInvalid(theForm.description, "<?php echo _('The description provided is too long.'); ?>")
 	<?php } ?>
-	
+
 	if (!isAlphanumeric(theForm.description.value))
 		return warnInvalid(theForm.description, msgInvalidDescription);
 
