@@ -1,17 +1,5 @@
 <?php /* $Id: $ */
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
-//Copyright (C) 2004 Coalescent Systems Inc. (info@coalescentsystems.ca)
-//
-//This program is free software; you can redistribute it and/or
-//modify it under the terms of the GNU General Public License
-//as published by the Free Software Foundation; either version 2
-//of the License, or (at your option) any later version.
-//
-//This program is distributed in the hope that it will be useful,
-//but WITHOUT ANY WARRANTY; without even the implied warranty of
-//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//GNU General Public License for more details.
-
 
 isset($_REQUEST['action'])?$action = $_REQUEST['action']:$action='';
 isset($_REQUEST['id'])?$extdisplay = $_REQUEST['id']:$extdisplay='';
@@ -57,7 +45,7 @@ if (isset($miscdests)) {
 if ($action == 'delete') {
 	echo '<br><h3>'._("Misc Destination").' '.$extdisplay.' '._("deleted").'!</h3><br><br><br><br><br><br><br><br>';
 } else {
-	if ($extdisplay){ 
+	if ($extdisplay){
 		//get details for this meetme
 		$thisMiscDest = miscdests_get($extdisplay);
 		//create variables
@@ -67,7 +55,7 @@ if ($action == 'delete') {
 	}
 
 	$helptext = _("Misc Destinations are for adding destinations that can be used by other FreePBX modules, generally used to route incoming calls. If you want to create feature codes that can be dialed by internal users and go to various destinations, please see the <strong>Misc Applications</strong> module.").' '._('If you need access to a Feature Code, such as *98 to dial voicemail or a Time Condition toggle, these destinations are now provided as Feature Code Admin destinations. For upgrade compatibility, if you previously had configured such a destination, it will still work but the Feature Code short cuts select list is not longer provided.');
-	
+
 		if ($extdisplay){ ?>
 	<h2><?php echo _("Misc Destination:")." ". $description; ?></h2>
 <?php
@@ -83,7 +71,7 @@ if ($action == 'delete') {
 				<br /><a href="#" class="info"><?php echo $usage_list['text']?>:<span><?php echo $usage_list['tooltip']?></span></a>
 <?php
 			}
-		} else { 
+		} else {
 			echo "<h2>"._("Add Misc Destination")."</h2>";
 			echo $helptext;
 		}
@@ -126,17 +114,24 @@ function editMD_onsubmit()
 {
 	var msgInvalidDescription = "<?php echo _('Please enter a valid Description'); ?>";
 	var msgInvalidDial = "<?php echo _('Please enter a valid Dial string'); ?>";
-	
+
 	defaultEmptyOK = false;
+
+	<?php if (function_exists('module_get_field_size')) { ?>
+		var sizeDisplayName = "<?php echo module_get_field_size('miscdests', 'description', 100); ?>";
+		if (!isCorrectLength(theForm.description.value, sizeDisplayName))
+			return warnInvalid(theForm.description, "<?php echo _('The description provided is too long.'); ?>")
+	<?php } ?>
+	
 	if (!isAlphanumeric(theForm.description.value))
 		return warnInvalid(theForm.description, msgInvalidDescription);
 
 	// go thru text and remove the {} bits so we only check the actual dial digits
 	var fldText = theForm.destdial.value;
 	var chkText = "";
-	
+
 	if ( (fldText.indexOf("{") > -1) && (fldText.indexOf("}") > -1) ) { // has one or more sets of {mod:fc}
-		
+
 		var inbraces = false;
 		for (var i=0; i<fldText.length; i++) {
 			if ( (fldText.charAt(i) == "{") && (inbraces == false) ) {
@@ -147,25 +142,25 @@ function editMD_onsubmit()
 				chkText += fldText.charAt(i);
 			}
 		}
-		
+
 		// if there is nothing in chkText but something in fldText
 		// then the field must contain a featurecode only, therefore
 		// there really is something in thre!
 		if ( (chkText == "") & (fldText != "") )
 			chkText = "0";
-			
+
 	} else {
 		chkText = fldText;
 	}
 	// now do the check using the chkText var made above
 	if (!isDialDigits(chkText))
 		return warnInvalid(theForm.destdial, msgInvalidDial);
-	
+
 	return true;
 }
 //-->
 </script>
 	</form>
-<?php		
+<?php
 } //end if action == delGRP
 ?>
