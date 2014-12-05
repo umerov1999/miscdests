@@ -3,164 +3,113 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
 isset($_REQUEST['action'])?$action = $_REQUEST['action']:$action='';
 isset($_REQUEST['id'])?$extdisplay = $_REQUEST['id']:$extdisplay='';
-
+$md = FreePBX::create()->Miscdests;
 $dispnum = "miscdests"; //used for switch on config.php
-
-switch ($action) {
-	case "add":
-		$_REQUEST['id'] = miscdests_add($_REQUEST['description'],$_REQUEST['destdial']);
-		needreload();
-		redirect_standard('id');
-	break;
-	case "delete":
-		miscdests_del($extdisplay);
-		needreload();
-		redirect_standard();
-	break;
-	case "edit":  //just delete and re-add
-		miscdests_update($extdisplay,$_REQUEST['description'],$_REQUEST['destdial']);
-		needreload();
-		redirect_standard('id');
-	break;
+$miscdests = $md->mdlist();
+//bootnav
+$bootnav = '';
+$bootnav .= '<div class="col-sm-3 hidden-xs bootnav">';
+$bootnav .= '<div class="list-group">';
+if($extdisplay == ''){
+	$bootnav .= '<a href="config.php?display=miscdests" class="list-group-item active">'._("Add Misc Destination").'</a>';	
+}else{
+	$bootnav .= '<a href="config.php?display=miscdests" class="list-group-item">'._("Add Misc Destination").'</a>';		
 }
-
-$miscdests = miscdests_list();
-
-?>
-
-
-<!-- right side menu -->
-<div class="rnav"><ul>
-    <li><a id="<?php echo ($extdisplay=='' ? 'current':'') ?>" href="config.php?display=<?php echo urlencode($dispnum)?>"><?php echo _("Add Misc Destination")?></a></li>
-<?php
 if (isset($miscdests)) {
 	foreach ($miscdests as $miscdest) {
-		echo "<li><a id=\"".($extdisplay==$miscdest[0] ? 'current':'')."\" href=\"config.php?display=".urlencode($dispnum)."&id=".urlencode($miscdest[0])."\">{$miscdest[1]}</a></li>";
+		$bootnav .= '<a class="list-group-item '.($extdisplay==$miscdest[0] ? 'active':'').'" href="config.php?display='.urlencode($dispnum).'&id='.urlencode($miscdest[0]).'">'.$miscdest[1].'</a>';
 	}
 }
-?>
-</ul></div>
-
-<?php
-if ($action == 'delete') {
-	echo '<br><h3>'._("Misc Destination").' '.$extdisplay.' '._("deleted").'!</h3><br><br><br><br><br><br><br><br>';
-} else {
-	if ($extdisplay){
-		//get details for this meetme
-		$thisMiscDest = miscdests_get($extdisplay);
-		//create variables
-		$description = "";
-		$destdial = "";
-		extract($thisMiscDest);
-	}
-
-	$helptext = _("Misc Destinations are for adding destinations that can be used by other FreePBX modules, generally used to route incoming calls. If you want to create feature codes that can be dialed by internal users and go to various destinations, please see the <strong>Misc Applications</strong> module.").' '._('If you need access to a Feature Code, such as *98 to dial voicemail or a Time Condition toggle, these destinations are now provided as Feature Code Admin destinations. For upgrade compatibility, if you previously had configured such a destination, it will still work but the Feature Code short cuts select list is not longer provided.');
-
-		if ($extdisplay){ ?>
-	<h2><?php echo _("Misc Destination:")." ". $description; ?></h2>
-<?php
-			$usage_list = framework_display_destination_usage(miscdests_getdest($extdisplay));
-			$delURL = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&action=delete';
-			$tlabel = sprintf(_("Delete Misc Destination %s"),$description);
-			$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/core_delete.png"/>&nbsp;'.$tlabel.'</span>';
-?>
-			<a href="<?php echo $delURL ?>"><?php echo $label; ?></a>
-<?php
-			if (!empty($usage_list)) {
-?>
-				<br /><a href="#" class="info"><?php echo $usage_list['text']?>:<span><?php echo $usage_list['tooltip']?></span></a>
-<?php
-			}
-		} else {
-			echo "<h2>"._("Add Misc Destination")."</h2>";
-			echo $helptext;
+$bootnav .= '</div>';
+$bootnav .= '</div>';
+//end bootnav
+$subhead = _("Add Misc Destination");
+$helptext = _("Misc Destinations are for adding destinations that can be used by other FreePBX modules, generally used to route incoming calls. If you want to create feature codes that can be dialed by internal users and go to various destinations, please see the <strong>Misc Applications</strong> module.").' '._('If you need access to a Feature Code, such as *98 to dial voicemail or a Time Condition toggle, these destinations are now provided as Feature Code Admin destinations. For upgrade compatibility, if you previously had configured such a destination, it will still work but the Feature Code short cuts select list is not longer provided.<br/><br/>');
+$usage_list = framework_display_destination_usage($md->getdest($extdisplay));
+if($extdisplay){
+	$thisMiscDest = $md->get($extdisplay);
+	$thisMiscDest = $thisMiscDest[0];
+	$description = $thisMiscDest['description'] ? $thisMiscDest['description']:'';
+	$destdial = $thisMiscDest['destdial'] ? $thisMiscDest['destdial']:'';
+	$subhead = _("Edit Misc Destination") . ": " . $destdial;
+	$helptext = '';
+	if(!empty($usage_list)){
+		$objects = explode("\n", $usage_list['tooltip']);
+		$helptext = '<div class="alert alert-info" role="alert">';
+		$helptext .= '<i class="glyphicon glyphicon-info-sign fpbx-help-icon" data-for="inuse"></i>&nbsp;' . $usage_list['text'] . '<br/>';
+		$helptext .= '<ul class="list-group">';
+		foreach($objects as $o){
+			$helptext .= '<li class="list-group-item" id="iteminuse">' . $o . '</li>';
 		}
-?>
-	<form autocomplete="off" name="editMD" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return editMD_onsubmit();">
-	<input type="hidden" name="display" value="<?php echo $dispnum?>">
-	<input type="hidden" name="action" value="<?php echo ($extdisplay ? 'edit' : 'add') ?>">
-	<table>
-	<tr><td colspan="2"><h5><?php echo ($extdisplay ? _("Edit Misc Destination") : _("Add Misc Destination")) ?><hr></h5></td></tr>
-<?php		if ($extdisplay){ ?>
-		<tr><td><input type="hidden" name="id" value="<?php echo $extdisplay; ?>"></td></tr>
-<?php		} ?>
-	<tr>
-		<td><a href="#" class="info"><?php echo _("Description:")?><span><?php echo _("Give this Misc Destination a brief name to help you identify it.")?></span></a></td>
-		<td><input type="text" name="description" value="<?php echo (isset($description) ? $description : ''); ?>" tabindex="<?php echo ++$tabindex;?>"></td>
-	</tr>
-	<tr>
-		<td><a href="#" class="info"><?php echo _("Dial:")?><span><?php echo _("Enter the number this destination will simulate dialing, exactly as you would dial it from an internal phone. When you route a call to this destination, it will be as if the caller dialed this number from an internal phone.") ?></span></a></td>
-		<td>
-			<input type="text" name="destdial" value="<?php echo (isset($destdial) ? $destdial : ''); ?>" tabindex="<?php echo ++$tabindex;?>">&nbsp;&nbsp;
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2"><br><h6><input name="Submit" type="submit" value="<?php echo _("Submit Changes")?>" tabindex="<?php echo ++$tabindex;?>"></h6>
-		</td>
-	</tr>
-	</table>
-<script language="javascript">
-<!--
-
-var theForm = document.editMD;
-
-if (theForm.description.value == "") {
-	theForm.description.focus();
-} else {
-	theForm.destdial.focus();
-}
-
-function editMD_onsubmit()
-{
-	var msgInvalidDescription = "<?php echo _('Please enter a valid Description'); ?>";
-	var msgInvalidDial = "<?php echo _('Please enter a valid Dial string'); ?>";
-
-	defaultEmptyOK = false;
-
-	<?php if (function_exists('module_get_field_size')) { ?>
-		var sizeDisplayName = "<?php echo module_get_field_size('miscdests', 'description', 100); ?>";
-		if (!isCorrectLength(theForm.description.value, sizeDisplayName))
-			return warnInvalid(theForm.description, "<?php echo _('The description provided is too long.'); ?>")
-	<?php } ?>
-	
-	if (!isAlphanumeric(theForm.description.value))
-		return warnInvalid(theForm.description, msgInvalidDescription);
-
-	// go thru text and remove the {} bits so we only check the actual dial digits
-	var fldText = theForm.destdial.value;
-	var chkText = "";
-
-	if ( (fldText.indexOf("{") > -1) && (fldText.indexOf("}") > -1) ) { // has one or more sets of {mod:fc}
-
-		var inbraces = false;
-		for (var i=0; i<fldText.length; i++) {
-			if ( (fldText.charAt(i) == "{") && (inbraces == false) ) {
-				inbraces = true;
-			} else if ( (fldText.charAt(i) == "}") && (inbraces == true) ) {
-				inbraces = false;
-			} else if ( inbraces == false ) {
-				chkText += fldText.charAt(i);
-			}
-		}
-
-		// if there is nothing in chkText but something in fldText
-		// then the field must contain a featurecode only, therefore
-		// there really is something in thre!
-		if ( (chkText == "") & (fldText != "") )
-			chkText = "0";
-
-	} else {
-		chkText = fldText;
+		$helptext .= '</ul>';
+		$helptext .= '</div>';
 	}
-	// now do the check using the chkText var made above
-	if (!isDialDigits(chkText))
-		return warnInvalid(theForm.destdial, msgInvalidDial);
-
-	return true;
 }
-//-->
-</script>
-	</form>
-<?php
-} //end if action == delGRP
+
 ?>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-9">
+			<div class="fpbx-container">
+				<form autocomplete="off" class="fpbx-submit" name="editMD" action="config.php?display=miscdests" method="post" data-fpbx-delete="config.php?display=miscdests&amp;extdisplay=<?php echo $extdisplay ?>&amp;action=delete" role="form">
+				<input type="hidden" name="display" value="<?php echo $dispnum?>">
+				<input type="hidden" name="action" value="<?php echo ($extdisplay ? 'edit' : 'add') ?>">
+				<input type="hidden" name="id" value="<?php echo $extdisplay; ?>">
+					<div class="display full-border">
+						<div>
+							<h1><?php echo _("Misc Destination:")." ". $description; ?></h1>
+							<h3><?php echo $subhead ?></h3>
+							<p><?php echo $helptext ?></p>
+						</div>
+						<div class="element-container">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+										<div class="form-group">
+											<div class="col-md-3">
+												<label class="control-label" for="description"><?php echo _("Description:")?></label>
+												<i class="fa fa-question-circle fpbx-help-icon" data-for="description"></i>
+											</div>
+											<div class="col-md-9">
+												<input type="text" class="form-control" id="description" name="description" value="<?php echo (isset($description) ? $description : ''); ?>" tabindex="<?php echo ++$tabindex;?>" >
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<span id="description-help" class="help-block fpbx-help-block"><?php echo _("Give this Misc Destination a brief name to help you identify it.")?></span>
+								</div>
+							</div>
+						</div>
+						<div class="element-container">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+										<div class="form-group">
+											<div class="col-md-3">
+												<label class="control-label" for="destdial"><?php echo _("Dial:")?></label>
+												<i class="fa fa-question-circle fpbx-help-icon" data-for="destdial"></i>
+											</div>
+											<div class="col-md-9">
+												<input type="text" class="form-control" id="destdial" name="destdial" value="<?php echo (isset($destdial) ? $destdial : ''); ?>" tabindex="<?php echo ++$tabindex;?>">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<span id="destdial-help" class="help-block fpbx-help-block"><?php echo _("Enter the number this destination will simulate dialing, exactly as you would dial it from an internal phone. When you route a call to this destination, it will be as if the caller dialed this number from an internal phone.") ?></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	   <?php echo $bootnav ?>
+	</div>
+</div>

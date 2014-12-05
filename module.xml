@@ -2,7 +2,7 @@
 	<rawname>miscdests</rawname>
 	<repo>extended</repo>
 	<name>Misc Destinations</name>
-	<version>2.11.0.4</version>
+	<version>13.0.0.1</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,7 +11,7 @@
 	<changelog>
 		*2.11.0.4* #1953
 		*2.11.0.2* Include license file
-	  *2.11.0.1* Using new wrapper function for last insert id
+	 	 *2.11.0.1* Using new wrapper function for last insert id
 		*2.11.0.0* #6051
 		*2.10.0.1* #5478
 		*2.10.0.0* new version changes
@@ -19,7 +19,7 @@
 		*2.9.0.0* #4653
 	</changelog>
 	<depends>
-		<version>2.5.0alpha1</version>
+		<version>12.0</version>
 	</depends>
 	<menuitems>
 		<miscdests>Misc Destinations</miscdests>
