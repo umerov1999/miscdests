@@ -1,8 +1,7 @@
 <?PHP
-
 //	License for all code of this FreePBX module can be found in the license file inside the module directory
 //	Copyright (C) 2014 Schmooze Com Inc.
-
+namespace FreePBX\modules;
 class Miscdests implements BMO {
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
@@ -29,20 +28,20 @@ class Miscdests implements BMO {
 	public function backup() {}
 	public function restore($backup) {}
 	public function doConfigPageInit($page) {
-		$action = $_REQUEST['action'];
+
 		switch ($action) {
 			case "add":
-				$_REQUEST['id'] = $this->add($_REQUEST['description'],$_REQUEST['destdial']);
+				$request['id'] = $this->add($request['description'],$request['destdial']);
 				needreload();
 				redirect_standard('id');
 				break;
 			case "delete":
-				$this->del($_REQUEST['extdisplay']);
+				$this->del($request['extdisplay']);
 				needreload();
 				redirect_standard();
 				break;
-			case "edit":  //just delete and re-add
-				$this->update($_REQUEST['id'],$_REQUEST['description'],$_REQUEST['destdial']);
+			case "edit":
+				$this->update($request['id'],$request['description'],$request['destdial']);
 				needreload();
 				redirect_standard('id');
 			break;
