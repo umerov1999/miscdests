@@ -2,7 +2,7 @@
 //	License for all code of this FreePBX module can be found in the license file inside the module directory
 //	Copyright (C) 2014 Schmooze Com Inc.
 namespace FreePBX\modules;
-class Miscdests implements BMO {
+class Miscdests implements \BMO {
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
 			throw new Exception("Not given a FreePBX Object");
@@ -28,7 +28,7 @@ class Miscdests implements BMO {
 	public function backup() {}
 	public function restore($backup) {}
 	public function doConfigPageInit($page) {
-
+		$action = $_REQUEST['action'];
 		switch ($action) {
 			case "add":
 				$request['id'] = $this->add($request['description'],$request['destdial']);

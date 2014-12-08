@@ -8,8 +8,8 @@ if (theForm.description.value == "") {
 
 function editMD_onsubmit()
 {
-	var msgInvalidDescription = 'Please enter a valid Description';
-	var msgInvalidDial = 'Please enter a valid Dial string';
+	var msgInvalidDescription = _('Please enter a valid Description');
+	var msgInvalidDial = _('Please enter a valid Dial string');
 
 	defaultEmptyOK = false;
 	
@@ -52,7 +52,7 @@ function editMD_onsubmit()
 //Delete intercept
 $( "#delete" ).click(function() {
 	if($('[id = iteminuse]').length > 0){
-		var result = confirm("This destination is in use. Deleting it may cause things to not work properly");
+		var result = confirm(_("This destination is in use. Deleting it may cause things to not work properly"));
 		if(result == false){
 			return false;
 		}
