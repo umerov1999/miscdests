@@ -14,13 +14,12 @@ class Miscdests implements \BMO {
 		$db = $this->db;
 		$sql = "CREATE TABLE IF NOT EXISTS miscdests (id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,description VARCHAR( 100 ) NOT NULL , destdial VARCHAR( 100 ) NOT NULL)";
 		$q = $db->prepare($sql);
-		echo _("Creating Database \n");
 		$q = $q->execute();
 		unset($sql);
-		unset($q);		
+		unset($q);
 	}
 	public function uninstall() {
-		echo _("Removing Settings table");
+		out(_("Removing Settings table"));
 		$sql = "DROP TABLE IF EXISTS miscdests";
 		$q = $db->prepare($sql);
 		$q->execute();
@@ -50,14 +49,14 @@ class Miscdests implements \BMO {
 	public function doDialplanHook(&$ext, $engine, $priority) {
 		$contextname = 'ext-miscdests';
 		$fctemplate = '/\{(.+)\:(.+)\}/';
-		if(is_array($destlist = $this->mdlist())) {			
+		if(is_array($destlist = $this->mdlist())) {
 			foreach($destlist as $item) {
 				$miscdest = $this->get($item['0']);
 				$miscid = $miscdest['id'];
 				$miscdescription = $miscdest['description'];
 				$miscdialdest = $miscdest['destdial'];
 				// exchange {mod:fc} for the relevent feature codes in $miscdialdest
-				$miscdialdest = preg_replace_callback($fctemplate, "miscdests_lookupfc", $miscdialdest);	
+				$miscdialdest = preg_replace_callback($fctemplate, "miscdests_lookupfc", $miscdialdest);
 				// write out the dialplan details
 				$ext->add($contextname, $miscid, '', new ext_noop('MiscDest: '.$miscdescription));
 				$ext->add($contextname, $miscid, '', new ext_goto('from-internal,'.$miscdialdest.',1', ''));
@@ -95,7 +94,7 @@ class Miscdests implements \BMO {
 	// returns a associative arrays with keys 'destination' and 'description'
 	public function destinations() {
 		$results = $this->mdlist();
-	
+
 		// return an associative array with destination and description
 		if (isset($results)) {
 			foreach($results as $result){
@@ -106,14 +105,14 @@ class Miscdests implements \BMO {
 			return null;
 		}
 	}
-	
+
 	public function getdest($exten) {
 		return array('ext-miscdests,'.$exten.',1');
 	}
-	
+
 	public function getdestinfo($dest) {
 		global $active_modules;
-	
+
 		if (substr(trim($dest),0,14) == 'ext-miscdests,') {
 			$exten = explode(',',$dest);
 			$exten = $exten[1];
@@ -130,13 +129,13 @@ class Miscdests implements \BMO {
 			return false;
 		}
 	}
-	
+
 	public function mdlist() {
 		$db = $this->db;
 		$sql = "SELECT id, description FROM miscdests ORDER BY description";
 		$q = $db->prepare($sql);
 		$ob = $q->execute();
-		
+
 		if($q){
 			$results = $q->fetchAll();
 			foreach($results as $result){
@@ -149,7 +148,7 @@ class Miscdests implements \BMO {
 			return null;
 		}
 	}
-	
+
 	public function get($id){
 		$db = $this->db;
 		$sql = "SELECT id, description, destdial FROM miscdests WHERE id = ?";
@@ -161,7 +160,7 @@ class Miscdests implements \BMO {
 		}
 		return false;
 	}
-	
+
 	public function del($id){
 		$db = $this->db;
 		$sql = "DELETE FROM miscdests WHERE id = ?";
@@ -172,7 +171,7 @@ class Miscdests implements \BMO {
 		}
 		return false;
 	}
-	
+
 	public function add($description, $destdial){
 		$db = $this->db;
 		$sql = "INSERT INTO miscdests (description, destdial) VALUES (?,?)";
@@ -180,7 +179,7 @@ class Miscdests implements \BMO {
 		$ob = $q->execute(array($description,$destdial));
 		return $db->lastInsertId();
 	}
-	
+
 	public function update($id, $description, $destdial){
 		$db = $this->db;
 		$sql = "UPDATE miscdests SET description = ?, destdial = ? WHERE id = ?";
@@ -193,14 +192,14 @@ class Miscdests implements \BMO {
 		}
 		return false;
 	}
-	
+
 	public function lookupfc($matches) {
 		$modulename = $matches[1];
 		$featurename = $matches[2];
-	
+
 		$fcc = new featurecode($modulename, $featurename);
 		$fc = $fcc->getCodeActive();
 		return $fc;
 	}
-	
+
 }
