@@ -46,4 +46,4 @@ if($extdisplay){
 	}
 }
 
-show_view(__DIR__."/views/main.php",array("description" => $description, "subhead" => $subhead, "helptext" => $helptext, "destdial" => $destdial, "bootnav" => $bootnav, "extdisplay" => $extdisplay));
+show_view(__DIR__."/views/main.php",array("description" => $description, "subhead" => $subhead, "helptext" => $helptext, "destdial" => $destdial, "bootnav" => $bootnav, "extdisplay" => $extdisplay, "dispnum" => $dispnum));

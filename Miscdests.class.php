@@ -30,17 +30,18 @@ class Miscdests implements \BMO {
 		$action = $_REQUEST['action'];
 		switch ($action) {
 			case "add":
-				$request['id'] = $this->add($request['description'],$request['destdial']);
+				//TODO: this is REALLY bad
+				$_REQUEST['id'] = $this->add($_REQUEST['description'],$_REQUEST['destdial']);
 				needreload();
 				redirect_standard('id');
 				break;
 			case "delete":
-				$this->del($request['extdisplay']);
+				$this->del($_REQUEST['extdisplay']);
 				needreload();
 				redirect_standard();
 				break;
 			case "edit":
-				$this->update($request['id'],$request['description'],$request['destdial']);
+				$this->update($_REQUEST['id'],$_REQUEST['description'],$_REQUEST['destdial']);
 				needreload();
 				redirect_standard('id');
 			break;
