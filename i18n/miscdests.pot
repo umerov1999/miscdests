@@ -1,11 +1,15 @@
-# FreePBX language template
-# Copyright 2013 Schmooze Com Inc
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for miscdests
+# Copyright (C) 2008-2015 Sangoma, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 09:52+0000\n"
+"POT-Creation-Date: 2015-02-11 18:00-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,65 +17,29 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#, php-format
-msgid "Misc Destination: %s"
-msgstr ""
-
-msgid "Misc Destinations"
-msgstr ""
-
-msgid "Applications"
-msgstr ""
-
-msgid ""
-"Allows creating destinations that dial any local number (extensions, feature "
-"codes, outside phone numbers) that can be used by other modules (eg, IVR, "
-"time conditions) as a call destination."
-msgstr ""
-
+#: /usr/src/freepbx/miscdests/page.miscdests.php:14
+#: /usr/src/freepbx/miscdests/page.miscdests.php:16
+#: /usr/src/freepbx/miscdests/page.miscdests.php:26
 msgid "Add Misc Destination"
 msgstr ""
 
-msgid "Misc Destination"
+#: /usr/src/freepbx/miscdests/Miscdests.class.php:75
+msgid "Delete"
 msgstr ""
 
-msgid "deleted"
-msgstr ""
-
-msgid ""
-"Misc Destinations are for adding destinations that can be used by other "
-"FreePBX modules, generally used to route incoming calls. If you want to "
-"create feature codes that can be dialed by internal users and go to various "
-"destinations, please see the <strong>Misc Applications</strong> module."
-msgstr ""
-
-msgid ""
-"If you need access to a Feature Code, such as *98 to dial voicemail or a "
-"Time Condition toggle, these destinations are now provided as Feature Code "
-"Admin destinations. For upgrade compatibility, if you previously had "
-"configured such a destination, it will still work but the Feature Code short "
-"cuts select list is not longer provided."
-msgstr ""
-
-msgid "Misc Destination:"
-msgstr ""
-
-#, php-format
-msgid "Delete Misc Destination %s"
-msgstr ""
-
-msgid "Edit Misc Destination"
-msgstr ""
-
+#: /usr/src/freepbx/miscdests/views/main.php:21
 msgid "Description:"
 msgstr ""
 
-msgid "Give this Misc Destination a brief name to help you identify it."
-msgstr ""
-
+#: /usr/src/freepbx/miscdests/views/main.php:43
 msgid "Dial:"
 msgstr ""
 
+#: /usr/src/freepbx/miscdests/page.miscdests.php:34
+msgid "Edit Misc Destination"
+msgstr ""
+
+#: /usr/src/freepbx/miscdests/views/main.php:55
 msgid ""
 "Enter the number this destination will simulate dialing, exactly as you "
 "would dial it from an internal phone. When you route a call to this "
@@ -79,11 +47,58 @@ msgid ""
 "phone."
 msgstr ""
 
-msgid "Submit Changes"
+#: /usr/src/freepbx/miscdests/views/main.php:33
+msgid "Give this Misc Destination a brief name to help you identify it."
 msgstr ""
 
+#: /usr/src/freepbx/miscdests/page.miscdests.php:27
+msgid ""
+"If you need access to a Feature Code, such as *98 to dial voicemail or a "
+"Time Condition toggle, these destinations are now provided as Feature Code "
+"Admin destinations. For upgrade compatibility, if you previously had "
+"configured such a destination, it will still work but the Feature Code short "
+"cuts select list is not longer provided.<br/><br/>"
+msgstr ""
+
+#: /usr/src/freepbx/miscdests/views/main.php:11
+msgid "Misc Destination:"
+msgstr ""
+
+#: /usr/src/freepbx/miscdests/Miscdests.class.php:125
+#: /usr/src/freepbx/miscdests/functions.inc.php:37
+#, php-format
+msgid "Misc Destination: %s"
+msgstr ""
+
+#: /usr/src/freepbx/miscdests/page.miscdests.php:27
+msgid ""
+"Misc Destinations are for adding destinations that can be used by other "
+"FreePBX modules, generally used to route incoming calls. If you want to "
+"create feature codes that can be dialed by internal users and go to various "
+"destinations, please see the <strong>Misc Applications</strong> module."
+msgstr ""
+
+#: /usr/src/freepbx/miscdests/assets/js/miscdests.js:11
 msgid "Please enter a valid Description"
 msgstr ""
 
+#: /usr/src/freepbx/miscdests/assets/js/miscdests.js:12
 msgid "Please enter a valid Dial string"
+msgstr ""
+
+#: /usr/src/freepbx/miscdests/Miscdests.class.php:22
+msgid "Removing Settings table"
+msgstr ""
+
+#: /usr/src/freepbx/miscdests/Miscdests.class.php:80
+msgid "Reset"
+msgstr ""
+
+#: /usr/src/freepbx/miscdests/Miscdests.class.php:85
+msgid "Submit"
+msgstr ""
+
+#: /usr/src/freepbx/miscdests/assets/js/miscdests.js:55
+msgid ""
+"This destination is in use. Deleting it may cause things to not work properly"
 msgstr ""
