@@ -27,23 +27,27 @@ class Miscdests implements \BMO {
 	public function backup() {}
 	public function restore($backup) {}
 	public function doConfigPageInit($page) {
-		$action = $_REQUEST['action'];
+		$request = $_REQUEST;
+		isset($request['extdisplay'])?$extdisplay = $request['extdisplay']:$extdisplay='';
+		isset($request['description'])?$description = $request['description']:$description ='';
+		isset($request['destdial'])?$destdial = $request['destdial']:$destdial ='';
+		isset($request['view'])?$view = $request['view']:$view='';
+		isset($request['action'])?$action = $request['action']:$action='';
 		switch ($action) {
 			case "add":
-				//TODO: this is REALLY bad
-				$_REQUEST['id'] = $this->add($_REQUEST['description'],$_REQUEST['destdial']);
+				$extdisplay = $this->add($request['description'],$request['destdial']);
 				needreload();
-				redirect_standard('id');
+				redirect_standard();
 				break;
 			case "delete":
-				$this->del($_REQUEST['extdisplay']);
+				$this->del($request['extdisplay']);
 				needreload();
 				redirect_standard();
 				break;
 			case "edit":
-				$this->update($_REQUEST['id'],$_REQUEST['description'],$_REQUEST['destdial']);
+				$this->update($request['extdisplay'],$request['description'],$request['destdial']);
 				needreload();
-				redirect_standard('id');
+				redirect_standard('extdisplay', 'view');
 			break;
 		}
 	}
@@ -85,8 +89,11 @@ class Miscdests implements \BMO {
 						'value' => _('Submit')
 					)
 				);
-				if (empty($request['id'])) {
+				if (empty($request['extdisplay'])) {
 					unset($buttons['delete']);
+				}
+				if ($request['view'] != 'form'){
+					unset($buttons);
 				}
 			break;
 		}

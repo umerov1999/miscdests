@@ -1,49 +1,50 @@
 <?php /* $Id: $ */
+//	License for all code of this FreePBX module can be found in the license file inside the module directory
+//	Copyright 2015 Sangoma Technologies.
+//
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
-isset($_REQUEST['action'])?$action = $_REQUEST['action']:$action='';
-isset($_REQUEST['id'])?$extdisplay = $_REQUEST['id']:$extdisplay='';
 $md = FreePBX::create()->Miscdests;
-$dispnum = "miscdests"; //used for switch on config.php
-$miscdests = $md->mdlist();
-//bootnav
-$bootnav = '';
-$bootnav .= '<div class="col-sm-3 hidden-xs bootnav">';
-$bootnav .= '<div class="list-group">';
-if($extdisplay == ''){
-	$bootnav .= '<a href="config.php?display=miscdests" class="list-group-item active">'._("Add Misc Destination").'</a>';
-}else{
-	$bootnav .= '<a href="config.php?display=miscdests" class="list-group-item">'._("Add Misc Destination").'</a>';
-}
-if (isset($miscdests)) {
-	foreach ($miscdests as $miscdest) {
-		$bootnav .= '<a class="list-group-item '.($extdisplay==$miscdest[0] ? 'active':'').'" href="config.php?display='.urlencode($dispnum).'&id='.urlencode($miscdest[0]).'">'.$miscdest[1].'</a>';
-	}
-}
-$bootnav .= '</div>';
-$bootnav .= '</div>';
-//end bootnav
-$subhead = _("Add Misc Destination");
+$header = _("Misc Destinations");
 $helptext = _("Misc Destinations are for adding destinations that can be used by other FreePBX modules, generally used to route incoming calls. If you want to create feature codes that can be dialed by internal users and go to various destinations, please see the <strong>Misc Applications</strong> module.").' '._('If you need access to a Feature Code, such as *98 to dial voicemail or a Time Condition toggle, these destinations are now provided as Feature Code Admin destinations. For upgrade compatibility, if you previously had configured such a destination, it will still work but the Feature Code short cuts select list is not longer provided.<br/><br/>');
-$usage_list = framework_display_destination_usage($md->getdest($extdisplay));
-if($extdisplay){
-	$thisMiscDest = $md->get($extdisplay);
-	$thisMiscDest = $thisMiscDest[0];
-	$description = $thisMiscDest['description'] ? $thisMiscDest['description']:'';
-	$destdial = $thisMiscDest['destdial'] ? $thisMiscDest['destdial']:'';
-	$subhead = _("Edit Misc Destination") . ": " . $destdial;
-	$helptext = '';
-	if(!empty($usage_list)){
-		$objects = explode("\n", $usage_list['tooltip']);
-		$helptext = '<div class="alert alert-info" role="alert">';
-		$helptext .= '<i class="glyphicon glyphicon-info-sign fpbx-help-icon" data-for="inuse"></i>&nbsp;' . $usage_list['text'] . '<br/>';
-		$helptext .= '<ul class="list-group">';
-		foreach($objects as $o){
-			$helptext .= '<li class="list-group-item" id="iteminuse">' . $o . '</li>';
+$request = $_REQUEST;
+switch ($request['view']) {
+	case 'form':
+		if($request['extdisplay']){
+			$heading = _("Edit Misc Destination");
+		}else{
+			$heading = _("Add Misc Destination");
 		}
-		$helptext .= '</ul>';
-		$helptext .= '</div>';
-	}
+		$content = load_view(__DIR__.'/views/form.php', array('request' => $request, 'md' => $md));
+	break;
+	default:
+		$content = load_view(__DIR__.'/views/grid.php', array('request' => $request, 'md' => $md));
+	break;
 }
 
-show_view(__DIR__."/views/main.php",array("description" => $description, "subhead" => $subhead, "helptext" => $helptext, "destdial" => $destdial, "bootnav" => $bootnav, "extdisplay" => $extdisplay, "dispnum" => $dispnum));
+?>
+
+<div class="container-fluid">
+	<h1><?php $heading?></h1>
+	<div class="well well-info">
+		<?php echo $helptext?>
+	</div>
+	<div class = "display full-border">
+		<div class="row">
+			<div class="col-sm-9">
+				<div class="fpbx-container">
+					<div class="display full-border">
+						<?php echo $content ?>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3 hidden-xs bootnav">
+				<div class="list-group">
+					<?php echo load_view(__DIR__.'/views/bootnav.php', array('request' => $request))?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="/admin/modules/languages/assets/js/languages.js"></script>
+
