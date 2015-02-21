@@ -8,38 +8,52 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-11 18:00-0500\n"
+"POT-Creation-Date: 2015-02-20 19:42-0500\n"
 "PO-Revision-Date: 2006-10-17 17:30+0300\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /usr/src/freepbx/miscdests/page.miscdests.php:14
-#: /usr/src/freepbx/miscdests/page.miscdests.php:16
-#: /usr/src/freepbx/miscdests/page.miscdests.php:26
+#: views/grid.php:36
+msgid "Actions"
+msgstr ""
+
+#: page.miscdests.php:16 views/bootnav.php:2 views/grid.php:8
+#: views/grid.php:10
 msgid "Add Misc Destination"
 msgstr "הוסף יעד כללי"
 
-#: /usr/src/freepbx/miscdests/Miscdests.class.php:75
+#: miscdests.i18n.php:5
+msgid ""
+"Allows creating destinations that dial any local number (extensions, feature "
+"codes, outside phone numbers) that can be used by other modules (eg, IVR, "
+"time conditions) as a call destination."
+msgstr ""
+
+#: miscdests.i18n.php:4
+msgid "Applications"
+msgstr ""
+
+#: Miscdests.class.php:79
 msgid "Delete"
 msgstr ""
 
-#: /usr/src/freepbx/miscdests/views/main.php:21
+#: views/form.php:37
 #, fuzzy
 msgid "Description:"
 msgstr "תיאור:"
 
-#: /usr/src/freepbx/miscdests/views/main.php:43
+#: views/form.php:59
 #, fuzzy
 msgid "Dial:"
 msgstr "חייג:"
 
-#: /usr/src/freepbx/miscdests/page.miscdests.php:34
+#: page.miscdests.php:14
 msgid "Edit Misc Destination"
 msgstr "ערוך יעד כללי"
 
-#: /usr/src/freepbx/miscdests/views/main.php:55
+#: views/form.php:71
 msgid ""
 "Enter the number this destination will simulate dialing, exactly as you "
 "would dial it from an internal phone. When you route a call to this "
@@ -47,11 +61,11 @@ msgid ""
 "phone."
 msgstr ""
 
-#: /usr/src/freepbx/miscdests/views/main.php:33
+#: views/form.php:49
 msgid "Give this Misc Destination a brief name to help you identify it."
 msgstr "תן ליעד כללי זה שם קצר שיעזור לך לזהות אותו."
 
-#: /usr/src/freepbx/miscdests/page.miscdests.php:27
+#: page.miscdests.php:9
 msgid ""
 "If you need access to a Feature Code, such as *98 to dial voicemail or a "
 "Time Condition toggle, these destinations are now provided as Feature Code "
@@ -60,17 +74,25 @@ msgid ""
 "cuts select list is not longer provided.<br/><br/>"
 msgstr ""
 
-#: /usr/src/freepbx/miscdests/views/main.php:11
-msgid "Misc Destination:"
-msgstr "יעד כללי:"
+#: views/grid.php:35
+msgid "Language"
+msgstr ""
 
-#: /usr/src/freepbx/miscdests/Miscdests.class.php:125
-#: /usr/src/freepbx/miscdests/functions.inc.php:37
+#: views/bootnav.php:1
+msgid "List Misc Destinations"
+msgstr ""
+
+#: Miscdests.class.php:132 functions.inc.php:37
 #, fuzzy, php-format
 msgid "Misc Destination: %s"
 msgstr "יעד כללי:"
 
-#: /usr/src/freepbx/miscdests/page.miscdests.php:27
+#: miscdests.i18n.php:3 miscdests.i18n.php:6 page.miscdests.php:8
+#, fuzzy
+msgid "Misc Destinations"
+msgstr "יעד כללי"
+
+#: page.miscdests.php:9
 msgid ""
 "Misc Destinations are for adding destinations that can be used by other "
 "FreePBX modules, generally used to route incoming calls. If you want to "
@@ -78,34 +100,33 @@ msgid ""
 "destinations, please see the <strong>Misc Applications</strong> module."
 msgstr ""
 
-#: /usr/src/freepbx/miscdests/assets/js/miscdests.js:11
+#: assets/js/miscdests.js:11
 msgid "Please enter a valid Description"
 msgstr ""
 
-#: /usr/src/freepbx/miscdests/assets/js/miscdests.js:12
+#: assets/js/miscdests.js:12
 msgid "Please enter a valid Dial string"
 msgstr ""
 
-#: /usr/src/freepbx/miscdests/Miscdests.class.php:22
+#: Miscdests.class.php:22
 msgid "Removing Settings table"
 msgstr ""
 
-#: /usr/src/freepbx/miscdests/Miscdests.class.php:80
+#: Miscdests.class.php:84
 msgid "Reset"
 msgstr ""
 
-#: /usr/src/freepbx/miscdests/Miscdests.class.php:85
+#: Miscdests.class.php:89
 msgid "Submit"
 msgstr ""
 
-#: /usr/src/freepbx/miscdests/assets/js/miscdests.js:55
+#: assets/js/miscdests.js:55
 msgid ""
 "This destination is in use. Deleting it may cause things to not work properly"
 msgstr ""
 
-#, fuzzy
-#~ msgid "Misc Destinations"
-#~ msgstr "יעד כללי"
+#~ msgid "Misc Destination:"
+#~ msgstr "יעד כללי:"
 
 #~ msgid "Misc Destination"
 #~ msgstr "יעד כללי"
