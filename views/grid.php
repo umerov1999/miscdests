@@ -24,7 +24,7 @@ foreach ($miscdests as $miscdest) {
 	$lrows .= '</td>';
 	$lrows .= '<td>';
 	$lrows .= '<a href="?display=miscdests&view=form&extdisplay='.$miscdest[0].'"><i class="fa fa-edit"></i></a>&nbsp;';
-	$lrows .= '<a href="?display=miscdests&action=delete&extdisplay='.$miscdest[0].'"><i class="fa fa-trash"></i></a>';
+	$lrows .= '<a class="delAction" href="?display=miscdests&action=delete&extdisplay='.$miscdest[0].'"><i class="fa fa-trash"></i></a>';
 	$lrows .= '</td>';
 	$lrows .= '</tr>';
 }
