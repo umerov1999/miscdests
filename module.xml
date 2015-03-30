@@ -27,6 +27,7 @@
 	<popovers>
 		<miscdests>
 			<display>miscdests</display>
+			<view>form</view>
 		</miscdests>
 	</popovers>
 	<location>release/2.11/miscdests-2.11.0.0.tgz</location>
