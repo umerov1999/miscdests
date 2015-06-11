@@ -92,8 +92,8 @@ class Miscdests implements \BMO {
 				if (empty($request['extdisplay'])) {
 					unset($buttons['delete']);
 				}
-				if ($request['view'] != 'form'){
-					unset($buttons);
+				if (!isset($request['view'])){
+					$buttons = array();
 				}
 			break;
 		}

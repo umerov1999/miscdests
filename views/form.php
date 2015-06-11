@@ -1,8 +1,8 @@
 <?php
 //	License for all code of this FreePBX module can be found in the license file inside the module directory
 //	Copyright 2015 Sangoma Technologies.
-extract($request);
-
+extract($request, EXTR_SKIP);
+$helptext = '';
 if($extdisplay){
 	$thisMiscDest = $md->get($extdisplay);
 	$thisMiscDest = $thisMiscDest[0];
@@ -14,6 +14,7 @@ if($extdisplay){
 		$helptext = '<div class="alert alert-info" role="alert">';
 		$helptext .= '<i class="glyphicon glyphicon-info-sign fpbx-help-icon" data-for="inuse"></i>&nbsp;' . $usage_list['text'] . '<br/>';
 		$helptext .= '<ul class="list-group">';
+		$objects = is_array($objects)?$objects:array();
 		foreach($objects as $o){
 			$helptext .= '<li class="list-group-item" id="iteminuse">' . $o . '</li>';
 		}
@@ -38,7 +39,7 @@ if($extdisplay){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="description"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="text" class="form-control" id="description" name="description" value="<?php echo $description?>">
+						<input type="text" class="form-control" id="description" name="description" value="<?php echo isset($description)?$description:''?>">
 					</div>
 				</div>
 			</div>
@@ -60,7 +61,7 @@ if($extdisplay){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="destdial"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="text" class="form-control" id="destdial" name="destdial" value="<?php echo $destdial?>">
+						<input type="text" class="form-control" id="destdial" name="destdial" value="<?php echo isset($destdial)?$destdial:''?>">
 					</div>
 				</div>
 			</div>

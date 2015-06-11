@@ -8,7 +8,8 @@ $md = FreePBX::create()->Miscdests;
 $header = _("Misc Destinations");
 $helptext = _("Misc Destinations are for adding destinations that can be used by other FreePBX modules, generally used to route incoming calls. If you want to create feature codes that can be dialed by internal users and go to various destinations, please see the <strong>Misc Applications</strong> module.").' '._('If you need access to a Feature Code, such as *98 to dial voicemail or a Time Condition toggle, these destinations are now provided as Feature Code Admin destinations. For upgrade compatibility, if you previously had configured such a destination, it will still work but the Feature Code short cuts select list is not longer provided.<br/><br/>');
 $request = $_REQUEST;
-switch ($request['view']) {
+$view = isset($_REQUEST['view'])?$_REQUEST['view']:'';
+switch ($view) {
 	case 'form':
 		if($request['extdisplay']){
 			$heading = _("Edit Misc Destination");
@@ -40,7 +41,7 @@ switch ($request['view']) {
 			</div>
 			<div class="col-sm-3 hidden-xs bootnav <?php echo $fw_popover?'hidden':''?> <?php echo !isset($_REQUEST['view'])?'hidden':''?>">
 				<div class="list-group">
-					<?php echo load_view(__DIR__.'/views/bootnav.php', array('request' => $request))?>
+					<?php echo load_view(__DIR__.'/views/bootnav.php', array('request' => $request, 'view' => $view))?>
 				</div>
 			</div>
 		</div>
