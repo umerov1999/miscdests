@@ -3,6 +3,8 @@
 //	Copyright 2015 Sangoma Technologies.
 //
 $miscdests = $md->mdlist();
+$lrows = '';
+$miscdests = is_array($miscdests)?$miscdests:array();
 foreach ($miscdests as $miscdest) {
 	$lrows .= '<tr>';
 	$lrows .= '<td>';
@@ -16,7 +18,10 @@ foreach ($miscdests as $miscdest) {
 }
 
 ?>
-<table class="table table-striped">
+<div id="toolbar-all">
+	<a href="config.php?display=miscdests&view=form" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp; <?php echo _("Add Misc Destination") ?></a>
+</div>
+<table id="miscdestgrid" data-toolbar="#toolbar-all" data-maintain-selected="true" data-show-columns="true" data-show-toggle="true" data-toggle="table" data-pagination="true" data-search="true" class="table table-striped">
 	<thead>
 		<th><?php echo _("Language")?></th>
 		<th><?php echo _("Actions")?></th>
