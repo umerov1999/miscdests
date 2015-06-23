@@ -21,7 +21,7 @@ class Miscdests implements \BMO {
 	public function uninstall() {
 		out(_("Removing Settings table"));
 		$sql = "DROP TABLE IF EXISTS miscdests";
-		$q = $db->prepare($sql);
+		$q = $this->db->prepare($sql);
 		$q->execute();
 	}
 	public function backup() {}
