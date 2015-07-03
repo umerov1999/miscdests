@@ -38,19 +38,20 @@ msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:42-0500\n"
-"PO-Revision-Date: 2014-02-19 04:41+0200\n"
-"Last-Translator: Kenichi Fukaumi <k.fukaumi@qloog.com>\n"
-"Language-Team: Japanese <http://example.com/projects/freepbx/miscdests/ja/>\n"
+"PO-Revision-Date: 2015-07-03 08:18+0200\n"
+"Last-Translator: Kevin <kevin@qloog.com>\n"
+"Language-Team: Japanese "
+"<http://weblate.freepbx.org/projects/freepbx/miscdests/ja_JP/>\n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 1.8\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: views/grid.php:36
 msgid "Actions"
-msgstr ""
+msgstr "アクション"
 
 #: page.miscdests.php:16 views/bootnav.php:2 views/grid.php:8
 #: views/grid.php:10
@@ -73,7 +74,7 @@ msgstr "アプリケーション"
 
 #: Miscdests.class.php:79
 msgid "Delete"
-msgstr ""
+msgstr "削除"
 
 #: views/form.php:37
 msgid "Description:"
@@ -111,14 +112,17 @@ msgid ""
 "configured such a destination, it will still work but the Feature Code short "
 "cuts select list is not longer provided.<br/><br/>"
 msgstr ""
+"*98 (ボイスメール) や タイムコンディションなどの機能コードをアクセスしたい場合は、Feature Code Adminの宛先一覧から利用できます。"
+"アップグレードの際の整合性を保つために、過去にこのような宛先をこちらで設定した場合はそのまま使えますが、機能コードのショートカットを選択するリストは表示さ"
+"れません。<br/><br/>"
 
 #: views/grid.php:35
 msgid "Language"
-msgstr ""
+msgstr "言語"
 
 #: views/bootnav.php:1
 msgid "List Misc Destinations"
-msgstr ""
+msgstr "カスタム宛先を表示"
 
 #: Miscdests.class.php:132 functions.inc.php:37
 #, php-format
@@ -151,20 +155,20 @@ msgstr "有効な文字列を入力してください。"
 
 #: Miscdests.class.php:22
 msgid "Removing Settings table"
-msgstr ""
+msgstr "設定のテーブルを削除中"
 
 #: Miscdests.class.php:84
 msgid "Reset"
-msgstr ""
+msgstr "リセット"
 
 #: Miscdests.class.php:89
 msgid "Submit"
-msgstr ""
+msgstr "送信"
 
 #: assets/js/miscdests.js:55
 msgid ""
 "This destination is in use. Deleting it may cause things to not work properly"
-msgstr ""
+msgstr "この宛先は使用中です。削除すると、問題が起こる可能性があります"
 
 #~ msgid "Misc Destination:"
 #~ msgstr "その他宛先："
