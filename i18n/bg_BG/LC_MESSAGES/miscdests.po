@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:42-0500\n"
-"PO-Revision-Date: 2015-03-11 22:03+0200\n"
+"PO-Revision-Date: 2015-07-08 01:39+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian "
 "<http://weblate.freepbx.org/projects/freepbx/miscdests/bg_BG/>\n"
@@ -93,7 +93,7 @@ msgstr "Език"
 
 #: views/bootnav.php:1
 msgid "List Misc Destinations"
-msgstr ""
+msgstr "Списък Други Направления"
 
 #: Miscdests.class.php:132 functions.inc.php:37
 #, php-format
@@ -127,7 +127,7 @@ msgstr "Моля въведете правилен стринг за Избер�
 
 #: Miscdests.class.php:22
 msgid "Removing Settings table"
-msgstr ""
+msgstr "Премахване на таблица Настройки"
 
 #: Miscdests.class.php:84
 msgid "Reset"
@@ -140,7 +140,7 @@ msgstr "Приеми"
 #: assets/js/miscdests.js:55
 msgid ""
 "This destination is in use. Deleting it may cause things to not work properly"
-msgstr ""
+msgstr "Това направление се използва. Изтриването може да доведе до проблеми"
 
 #~ msgid "Misc Destination:"
 #~ msgstr "Друго Направление:"
