@@ -21,7 +21,7 @@ class Miscdests implements \BMO {
 	public function uninstall() {
 		out(_("Removing Settings table"));
 		$sql = "DROP TABLE IF EXISTS miscdests";
-		$q = $db->prepare($sql);
+		$q = $this->db->prepare($sql);
 		$q->execute();
 	}
 	public function backup() {}
@@ -92,8 +92,8 @@ class Miscdests implements \BMO {
 				if (empty($request['extdisplay'])) {
 					unset($buttons['delete']);
 				}
-				if ($request['view'] != 'form'){
-					unset($buttons);
+				if (!isset($request['view'])){
+					$buttons = array();
 				}
 			break;
 		}
