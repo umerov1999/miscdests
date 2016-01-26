@@ -11,7 +11,7 @@ function miscdests_destinations() {
 	// return an associative array with destination and description
 	if (isset($results)) {
 		foreach($results as $result){
-				$extens[] = array('destination' => 'ext-miscdests,'.$result['0'].',1', 'description' => $result['1']);
+			$extens[] = array('destination' => 'ext-miscdests,'.$result['0'].',1', 'description' => $result['1']);
 		}
 		return $extens;
 	} else {
@@ -34,9 +34,10 @@ function miscdests_getdestinfo($dest) {
 			return array();
 		} else {
 			//$type = isset($active_modules['announcement']['type'])?$active_modules['announcement']['type']:'setup';
-			return array('description' => sprintf(_("Misc Destination: %s"),$thisexten['description']),
-			             'edit_url' => 'config.php?display=miscdests&id='.urlencode($exten),
-								  );
+			return array(
+				'description' => sprintf(_("Misc Destination: %s"),$thisexten['description']),
+				'edit_url' => 'config.php?display=miscdests&id='.urlencode($exten),
+			);
 		}
 	} else {
 		return false;
@@ -103,7 +104,7 @@ function miscdests_add($description, $destdial){
 	global $db;
 	global $amp_conf;
 	$results = sql("INSERT INTO miscdests (description, destdial) VALUES (".sql_formattext($description).",".sql_formattext($destdial).")");
-	if(method_exists($db,'insert_id')) {
+	if (method_exists($db,'insert_id')) {
 		$id = $db->insert_id();
 	} else {
 		$id = $amp_conf["AMPDBENGINE"] == "sqlite3" ? sqlite_last_insert_rowid($db->connection) : mysql_insert_id($db->connection);
