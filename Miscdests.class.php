@@ -209,5 +209,45 @@ class Miscdests implements \BMO {
 		$fc = $fcc->getCodeActive();
 		return $fc;
 	}
+	public function ajaxRequest($req, &$setting) {
+			switch ($req) {
+					case 'getJSON':
+							return true;
+					break;
+					default:
+							return false;
+					break;
+			}
+	}
+	public function ajaxHandler(){
+		switch ($_REQUEST['command']) {
+			case 'getJSON':
+				switch ($_REQUEST['jdata']) {
+					case 'grid':
+						$mdl = $this->mdlist();
+						$mdl = is_array($mdl)?$mdl:array();
+						$ret = array();
+						foreach($mdl as $k => $v){
+							$ret[] = array ("id" => $v[0], 'description' => $v[1]);
+						}
+						return $ret;
+					break;
+					default:
+						return false;
+					break;
+				}
+			break;
 
+			default:
+				return false;
+			break;
+		}
+	}
+	public function getRightNav($request) {
+		$html = '';
+		if(isset($request['view']) && $request['view'] == 'form'){
+    	$html = load_view(__DIR__.'/views/bootnav.php');
+		}
+    return $html;
+	}
 }
