@@ -1,0 +1,130 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for miscdests
+# Copyright (C) 2008-2015 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-23 12:50-0400\n"
+"PO-Revision-Date: 2016-03-17 01:15+0200\n"
+"Last-Translator: Media <mousavi.media@gmail.com>\n"
+"Language-Team: Persian "
+"<http://weblate.freepbx.org/projects/freepbx/miscdests/fa/>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.4\n"
+
+#: views/grid.php:27
+msgid "Actions"
+msgstr "عملیات"
+
+#: page.miscdests.php:17 views/bootnav.php:2 views/grid.php:22
+msgid "Add Misc Destination"
+msgstr "افزودن مقصد اضافی"
+
+#: Miscdests.class.php:79
+msgid "Delete"
+msgstr "حذف"
+
+#: views/form.php:38
+msgid "Description:"
+msgstr "شرح："
+
+#: views/form.php:60
+msgid "Dial:"
+msgstr "شماره گیری："
+
+#: page.miscdests.php:15
+msgid "Edit Misc Destination"
+msgstr "ویرایش مقصد اضافی"
+
+#: views/form.php:72
+msgid ""
+"Enter the number this destination will simulate dialing, exactly as you "
+"would dial it from an internal phone. When you route a call to this "
+"destination, it will be as if the caller dialed this number from an internal "
+"phone."
+msgstr ""
+"Enter the number this destination will simulate dialing, exactly as you "
+"would dial it from an internal phone. When you route a call to this "
+"destination, it will be as if the caller dialed this number from an internal "
+"phone ."
+
+#: views/form.php:50
+msgid "Give this Misc Destination a brief name to help you identify it."
+msgstr "به داخلی Misc یک نام مناسب دهید تا راحت تر تشخیص دهید."
+
+#: page.miscdests.php:9
+msgid ""
+"If you need access to a Feature Code, such as *98 to dial voicemail or a "
+"Time Condition toggle, these destinations are now provided as Feature Code "
+"Admin destinations. For upgrade compatibility, if you previously had "
+"configured such a destination, it will still work but the Feature Code short "
+"cuts select list is not longer provided.<br/><br/>"
+msgstr ""
+"If you need access to a Feature Code, such as *98 to dial voicemail or a "
+"Time Condition toggle, these destinations are now provided as Feature Code "
+"Admin destinations . For upgrade compatibility, if you previously had "
+"configured such a destination, it will still work but the Feature Code short "
+"cuts select list is not longer provided.<br/><br/>"
+
+#: views/grid.php:26
+msgid "Language"
+msgstr "زبان"
+
+#: views/bootnav.php:1
+msgid "List Misc Destinations"
+msgstr "فهرست مقاصد اضافی"
+
+#: Miscdests.class.php:132 functions.inc.php:37
+#, php-format
+msgid "Misc Destination: %s"
+msgstr "مقصد اضافی：%s"
+
+#: page.miscdests.php:8
+msgid "Misc Destinations"
+msgstr "مقاصد اضافه"
+
+#: page.miscdests.php:9
+msgid ""
+"Misc Destinations are for adding destinations that can be used by other "
+"FreePBX modules, generally used to route incoming calls. If you want to "
+"create feature codes that can be dialed by internal users and go to various "
+"destinations, please see the <strong>Misc Applications</strong> module."
+msgstr ""
+"Misc Destinations are for adding destinations that can be used by other "
+"FreePBX modules, generally used to route incoming calls. If you want to "
+"create feature codes that can be dialed by internal users and go to various "
+"destinations, please see the <strong>Misc Applications</strong> module ."
+
+#: assets/js/miscdests.js:11
+msgid "Please enter a valid Description"
+msgstr "شرح معتبر وارد کنید"
+
+#: assets/js/miscdests.js:12
+msgid "Please enter a valid Dial string"
+msgstr "رشته عددی صحیح وارد کنید"
+
+#: Miscdests.class.php:22
+msgid "Removing Settings table"
+msgstr "حذف تنظیمات جدول"
+
+#: Miscdests.class.php:84
+msgid "Reset"
+msgstr "بازنشانی"
+
+#: Miscdests.class.php:89
+msgid "Submit"
+msgstr "ثبت"
+
+#: assets/js/miscdests.js:55
+msgid ""
+"This destination is in use. Deleting it may cause things to not work properly"
+msgstr "این مقصد درحال استفاده است. حذف آن باعث ایجاد مشکل میشود"
