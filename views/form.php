@@ -8,7 +8,7 @@ if($extdisplay){
 	$thisMiscDest = $thisMiscDest[0];
 	$description = $thisMiscDest['description'] ? $thisMiscDest['description']:'';
 	$destdial = $thisMiscDest['destdial'] ? $thisMiscDest['destdial']:'';
-	$usage_list = framework_display_destination_usage($extdisplay);
+	$usage_list = framework_display_destination_usage(miscdests_getdest($extdisplay));
 	if(!empty($usage_list)){
 		$objects = explode("\n", $usage_list['tooltip']);
 		$helptext = '<div class="alert alert-info" role="alert">';
