@@ -184,7 +184,7 @@ class Miscdests implements \BMO {
 		$db = $this->db;
 		$sql = "INSERT INTO miscdests (description, destdial) VALUES (?,?)";
 		$q = $db->prepare($sql);
-		$ob = $q->execute(array($description,$destdial));
+		$ob = $q->execute(array($description,trim($destdial)));
 		return $db->lastInsertId();
 	}
 
@@ -193,7 +193,7 @@ class Miscdests implements \BMO {
 		$sql = "UPDATE miscdests SET description = ?, destdial = ? WHERE id = ?";
 		debug('*******Update ID: ' . $id . 'description / destdial = ' . $description . ' / ' . $destdial);
 		$q = $db->prepare($sql);
-		$q->execute(array($description,$destdial,$id));
+		$q->execute(array($description,trim($destdial),$id));
 		if(q){
 			debug($q->rowCount());
 			return $q->rowCount();
