@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-06 15:54-0700\n"
+"POT-Creation-Date: 2017-04-25 15:36-0400\n"
 "PO-Revision-Date: 2015-07-03 08:18+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -67,7 +67,7 @@ msgstr ""
 "します、これはコールの宛先として他のモジュール(例: IVR、時間条件)によって使用"
 "することが可能です。"
 
-#: miscdests.i18n.php:6 miscdests.i18n.php:12
+#: miscdests.i18n.php:6
 msgid "Applications"
 msgstr "アプリケーション"
 

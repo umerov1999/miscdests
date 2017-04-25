@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX miscdests\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-06 15:54-0700\n"
+"POT-Creation-Date: 2017-04-25 15:36-0400\n"
 "PO-Revision-Date: 2008-10-10 22:50+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -32,7 +32,7 @@ msgid ""
 "time conditions) as a call destination."
 msgstr ""
 
-#: miscdests.i18n.php:6 miscdests.i18n.php:12
+#: miscdests.i18n.php:6
 msgid "Applications"
 msgstr ""
 
