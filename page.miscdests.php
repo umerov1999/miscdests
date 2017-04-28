@@ -17,7 +17,7 @@ switch ($view) {
 			$usage_list = framework_display_destination_usage(miscdests_getdest($request['extdisplay']));
 			if(!empty($usage_list)){
 				$usagehtml = <<< HTML
-<div class="panel panel-default">
+<div class="panel panel-default fpbx-usageinfo">
 	<div class="panel-heading">
 		$usage_list[text]
 	</div>
