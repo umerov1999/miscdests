@@ -5,7 +5,7 @@
  $dataurl = "ajax.php?module=miscdests&command=getJSON&jdata=grid";
 ?>
 <div id="toolbar-all">
-	<a href="config.php?display=miscdests&view=form" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp; <?php echo _("Add Misc Destination") ?></a>
+	<a href="config.php?display=miscdests&amp;view=form" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp; <?php echo _("Add Misc Destination") ?></a>
 </div>
 <table id="miscdestgrid" data-toolbar="#toolbar-all" data-maintain-selected="true" data-url="<?php echo $dataurl?>" data-show-columns="true" data-show-toggle="true" data-toggle="table" data-pagination="true" data-search="true" class="table table-striped">
 	<thead>
@@ -17,7 +17,7 @@
 <script>
 
 function linkFormatter(value, row, index){
-    var html = '<a href="?display=miscdests&view=form&extdisplay='+value+'"><i class="fa fa-pencil"></i></a>';
+    var html = '<a href="?display=miscdests&view=form&extdisplay='+value+'"><i class="fa fa-edit"></i></a>';
     html += '&nbsp;<a href="?display=miscdests&action=delete&extdisplay='+value+'" class="delAction"><i class="fa fa-trash"></i></a>';
     return html;
 }

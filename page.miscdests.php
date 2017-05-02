@@ -9,10 +9,25 @@ $header = _("Misc Destinations");
 $helptext = _("Misc Destinations are for adding destinations that can be used by other FreePBX modules, generally used to route incoming calls. If you want to create feature codes that can be dialed by internal users and go to various destinations, please see the <strong>Misc Applications</strong> module.").' '._('If you need access to a Feature Code, such as *98 to dial voicemail or a Time Condition toggle, these destinations are now provided as Feature Code Admin destinations. For upgrade compatibility, if you previously had configured such a destination, it will still work but the Feature Code short cuts select list is not longer provided.<br/><br/>');
 $request = $_REQUEST;
 $view = isset($_REQUEST['view'])?$_REQUEST['view']:'';
+$usagehtml = '';
 switch ($view) {
 	case 'form':
 		if($request['extdisplay']){
 			$heading = _("Edit Misc Destination");
+			$usage_list = framework_display_destination_usage(miscdests_getdest($request['extdisplay']));
+			if(!empty($usage_list)){
+				$usagehtml = <<< HTML
+<div class="panel panel-default fpbx-usageinfo">
+	<div class="panel-heading">
+		$usage_list[text]
+	</div>
+	<div class="panel-body">
+		$usage_list[tooltip]
+	</div>
+</div>
+
+HTML;
+			}
 		}else{
 			$heading = _("Add Misc Destination");
 		}
@@ -26,7 +41,8 @@ switch ($view) {
 ?>
 
 <div class="container-fluid">
-	<h1><?php $heading?></h1>
+	<h1><?php echo $heading?></h1>
+	<?php echo $usagehtml?>
 	<div class="well well-info">
 		<?php echo $helptext?>
 	</div>

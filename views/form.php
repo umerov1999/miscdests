@@ -2,28 +2,13 @@
 //	License for all code of this FreePBX module can be found in the license file inside the module directory
 //	Copyright 2015 Sangoma Technologies.
 extract($request, EXTR_SKIP);
-$helptext = '';
 if($extdisplay){
 	$thisMiscDest = $md->get($extdisplay);
 	$thisMiscDest = $thisMiscDest[0];
 	$description = $thisMiscDest['description'] ? $thisMiscDest['description']:'';
 	$destdial = $thisMiscDest['destdial'] ? $thisMiscDest['destdial']:'';
-	$usage_list = framework_display_destination_usage(miscdests_getdest($extdisplay));
-	if(!empty($usage_list)){
-		$objects = explode("\n", $usage_list['tooltip']);
-		$helptext = '<div class="alert alert-info" role="alert">';
-		$helptext .= '<i class="glyphicon glyphicon-info-sign fpbx-help-icon" data-for="inuse"></i>&nbsp;' . $usage_list['text'] . '<br/>';
-		$helptext .= '<ul class="list-group">';
-		$objects = is_array($objects)?$objects:array();
-		foreach($objects as $o){
-			$helptext .= '<li class="list-group-item" id="iteminuse">' . $o . '</li>';
-		}
-		$helptext .= '</ul>';
-		$helptext .= '</div>';
-	}
 }
 ?>
-<?php echo $helptext ?>
 <form autocomplete="off" class="fpbx-submit" name="editMD" action="config.php?display=miscdests" method="post" data-fpbx-delete="config.php?display=miscdests&amp;extdisplay=<?php echo $extdisplay ?>&amp;action=delete" role="form">
 	<input type="hidden" name="display" value="miscdests">
 	<input type="hidden" name="action" value="<?php echo ($extdisplay ? 'edit' : 'add') ?>">
