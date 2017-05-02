@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-25 15:36-0400\n"
+"POT-Creation-Date: 2017-05-01 22:48-0400\n"
 "PO-Revision-Date: 2017-02-24 20:24+0200\n"
 "Last-Translator: Kingvoice <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Actions"
 msgstr "Ações"
 
-#: page.miscdests.php:17 views/bootnav.php:3 views/grid.php:8
+#: page.miscdests.php:19 views/bootnav.php:3 views/grid.php:8
 msgid "Add Misc Destination"
 msgstr "Adicionar Destino Diversificado"
 
@@ -48,7 +48,7 @@ msgstr "Aplicações"
 msgid "Delete"
 msgstr "Apagar"
 
-#: views/form.php:38
+#: views/form.php:23
 msgid "Description:"
 msgstr "Descrição:"
 
@@ -56,15 +56,15 @@ msgstr "Descrição:"
 msgid "Destination"
 msgstr "Destino"
 
-#: views/form.php:60
+#: views/form.php:45
 msgid "Dial:"
 msgstr "Discar:"
 
-#: page.miscdests.php:15
+#: page.miscdests.php:16
 msgid "Edit Misc Destination"
 msgstr "Editar Destino Diversificado"
 
-#: views/form.php:72
+#: views/form.php:57
 msgid ""
 "Enter the number this destination will simulate dialing, exactly as you "
 "would dial it from an internal phone. When you route a call to this "
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Extension"
 msgstr "Ramal"
 
-#: views/form.php:50
+#: views/form.php:35
 msgid "Give this Misc Destination a brief name to help you identify it."
 msgstr "Dê um breve nome de Destino Diversificado para ajudar a identificá-lo."
 

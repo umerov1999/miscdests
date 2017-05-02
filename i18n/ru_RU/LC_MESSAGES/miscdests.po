@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-25 15:36-0400\n"
+"POT-Creation-Date: 2017-05-01 22:48-0400\n"
 "PO-Revision-Date: 2015-05-04 00:39+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Actions"
 msgstr "Действия"
 
-#: page.miscdests.php:17 views/bootnav.php:3 views/grid.php:8
+#: page.miscdests.php:19 views/bootnav.php:3 views/grid.php:8
 msgid "Add Misc Destination"
 msgstr "Добавить Дополнительное направление"
 
@@ -47,7 +47,7 @@ msgstr "Приложения"
 msgid "Delete"
 msgstr "Удалить"
 
-#: views/form.php:38
+#: views/form.php:23
 msgid "Description:"
 msgstr "Описание:"
 
@@ -55,15 +55,15 @@ msgstr "Описание:"
 msgid "Destination"
 msgstr ""
 
-#: views/form.php:60
+#: views/form.php:45
 msgid "Dial:"
 msgstr "Набирать:"
 
-#: page.miscdests.php:15
+#: page.miscdests.php:16
 msgid "Edit Misc Destination"
 msgstr "Изменить Дополнительное направление"
 
-#: views/form.php:72
+#: views/form.php:57
 msgid ""
 "Enter the number this destination will simulate dialing, exactly as you "
 "would dial it from an internal phone. When you route a call to this "
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Extension"
 msgstr ""
 
-#: views/form.php:50
+#: views/form.php:35
 msgid "Give this Misc Destination a brief name to help you identify it."
 msgstr "Присвойте этому направлению короткое название для идентификации."
 
