@@ -10,21 +10,24 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-01 22:48-0400\n"
-"PO-Revision-Date: 2017-05-01 22:48-0400\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2017-07-10 15:59+0200\n"
+"Last-Translator: PETER <ftek@ymail.com>\n"
+"Language-Team: Vietnamese "
+"<http://weblate.freepbx.org/projects/freepbx/miscdests/vi/>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: views/grid.php:13
 msgid "Actions"
-msgstr ""
+msgstr "Các thao tác"
 
 #: page.miscdests.php:19 views/bootnav.php:3 views/grid.php:8
 msgid "Add Misc Destination"
-msgstr ""
+msgstr "Thêm điểm đích Misc"
 
 #: miscdests.i18n.php:8
 msgid ""
@@ -35,27 +38,27 @@ msgstr ""
 
 #: miscdests.i18n.php:6
 msgid "Applications"
-msgstr ""
+msgstr "Các ứng dụng"
 
 #: Miscdests.class.php:79
 msgid "Delete"
-msgstr ""
+msgstr "Xóa"
 
 #: views/form.php:23
 msgid "Description:"
-msgstr ""
+msgstr "Mô tả:"
 
 #: views/grid.php:12
 msgid "Destination"
-msgstr ""
+msgstr "Điểm đích"
 
 #: views/form.php:45
 msgid "Dial:"
-msgstr ""
+msgstr "Quay số:"
 
 #: page.miscdests.php:16
 msgid "Edit Misc Destination"
-msgstr ""
+msgstr "Chỉnh sửa điểm đích Misc"
 
 #: views/form.php:57
 msgid ""
@@ -67,11 +70,11 @@ msgstr ""
 
 #: views/bootnav.php:8
 msgid "Extension"
-msgstr ""
+msgstr "Máy nhánh"
 
 #: views/form.php:35
 msgid "Give this Misc Destination a brief name to help you identify it."
-msgstr ""
+msgstr "Đặt điểm đích Misc một tên ngắn gọn để giúp bạn xác định nó."
 
 #: page.miscdests.php:9
 msgid ""
@@ -84,16 +87,16 @@ msgstr ""
 
 #: views/bootnav.php:2
 msgid "List Misc Destinations"
-msgstr ""
+msgstr "Danh sách các điểm đích Misc"
 
 #: Miscdests.class.php:132 functions.inc.php:38
 #, php-format
 msgid "Misc Destination: %s"
-msgstr ""
+msgstr "Điểm đích Misc: %s"
 
 #: miscdests.i18n.php:4 miscdests.i18n.php:10 page.miscdests.php:8
 msgid "Misc Destinations"
-msgstr ""
+msgstr "Các điểm đích Misc"
 
 #: page.miscdests.php:9
 msgid ""
@@ -105,7 +108,7 @@ msgstr ""
 
 #: assets/js/miscdests.js:11
 msgid "Please enter a valid Description"
-msgstr ""
+msgstr "Vui lòng nhập một mô tả hợp lý"
 
 #: assets/js/miscdests.js:12
 msgid "Please enter a valid Dial string"
