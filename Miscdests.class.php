@@ -2,30 +2,20 @@
 //	License for all code of this FreePBX module can be found in the license file inside the module directory
 //	Copyright (C) 2014 Schmooze Com Inc.
 namespace FreePBX\modules;
-class Miscdests implements \BMO {
+use BMO;
+use FreePBX_Helpers;
+use PDO;
+class Miscdests extends FreePBX_Helpers implements BMO {
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
 			throw new Exception("Not given a FreePBX Object");
 		}
 		$this->FreePBX = $freepbx;
-		$this->db = $freepbx->Database;
+		$this->FreePBX->Database = $freepbx->Database;
 	}
-	public function install() {
-		$db = $this->db;
-		$sql = "CREATE TABLE IF NOT EXISTS miscdests (id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,description VARCHAR( 100 ) NOT NULL , destdial VARCHAR( 100 ) NOT NULL)";
-		$q = $db->prepare($sql);
-		$q = $q->execute();
-		unset($sql);
-		unset($q);
-	}
-	public function uninstall() {
-		out(_("Removing Settings table"));
-		$sql = "DROP TABLE IF EXISTS miscdests";
-		$q = $this->db->prepare($sql);
-		$q->execute();
-	}
-	public function backup() {}
-	public function restore($backup) {}
+	public function install() {}
+	public function uninstall() {}
+
 	public function doConfigPageInit($page) {
 		$request = $_REQUEST;
 		isset($request['extdisplay'])?$extdisplay = $request['extdisplay']:$extdisplay='';
@@ -138,14 +128,22 @@ class Miscdests implements \BMO {
 		}
 	}
 
-	public function mdlist() {
-		$db = $this->db;
-		$sql = "SELECT id, description FROM miscdests ORDER BY description";
+	public function mdlist($all = false) {
+        $db = $this->FreePBX->Database;
+        $sql = "SELECT id, description FROM miscdests ORDER BY description";
+        if ($all) {
+            $sql = 'SELECT * FROM miscdests ORDER BY description';
+        }
 		$q = $db->prepare($sql);
 		$ob = $q->execute();
 
 		if($q){
-			$results = $q->fetchAll();
+            if($all){
+                return $q->fetchAll(PDO::FETCH_ASSOC);
+            }
+
+            $results = $q->fetchAll();
+
 			foreach($results as $result){
 				$extens[] = array($result['id'],$result['description']);
 			}
@@ -158,7 +156,7 @@ class Miscdests implements \BMO {
 	}
 
 	public function get($id){
-		$db = $this->db;
+		$db = $this->FreePBX->Database;
 		$sql = "SELECT id, description, destdial FROM miscdests WHERE id = ?";
 		$q = $db->prepare($sql);
 		$ob = $q->execute(array($id));
@@ -170,7 +168,7 @@ class Miscdests implements \BMO {
 	}
 
 	public function del($id){
-		$db = $this->db;
+		$db = $this->FreePBX->Database;
 		$sql = "DELETE FROM miscdests WHERE id = ?";
 		$q = $db->prepare($sql);
 		$ob = $q->execute(array($id));
@@ -181,15 +179,21 @@ class Miscdests implements \BMO {
 	}
 
 	public function add($description, $destdial){
-		$db = $this->db;
+		$db = $this->FreePBX->Database;
 		$sql = "INSERT INTO miscdests (description, destdial) VALUES (?,?)";
 		$q = $db->prepare($sql);
 		$ob = $q->execute(array($description,trim($destdial)));
-		return $db->lastInsertId();
+		return $db->lastInsertId('id');
 	}
 
+    public function upsert($id, $description, $destdial){
+        $this->FreePBX->Database->prepare('REPLACE INTO miscdests (id, description, destdial) VALUES (:id, :description :destdial)')
+            ->execute([':id' => $id, ':description' => $description, ':destdial' => $destdial]);
+        return $this;
+    }
+
 	public function update($id, $description, $destdial){
-		$db = $this->db;
+		$db = $this->FreePBX->Database;
 		$sql = "UPDATE miscdests SET description = ?, destdial = ? WHERE id = ?";
 		debug('*******Update ID: ' . $id . 'description / destdial = ' . $description . ' / ' . $destdial);
 		$q = $db->prepare($sql);
