@@ -187,7 +187,7 @@ class Miscdests extends FreePBX_Helpers implements BMO {
 	}
 
     public function upsert($id, $description, $destdial){
-        $this->FreePBX->Database->prepare('REPLACE INTO miscdests (id, description, destdial) VALUES (:id, :description :destdial)')
+        $this->FreePBX->Database->prepare('REPLACE INTO miscdests (`id`, `description`, `destdial`) VALUES (:id, :description, :destdial)')
             ->execute([':id' => $id, ':description' => $description, ':destdial' => $destdial]);
         return $this;
     }
