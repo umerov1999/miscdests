@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 22:48-0400\n"
+"POT-Creation-Date: 2018-08-20 14:26-0400\n"
 "PO-Revision-Date: 2018-05-29 13:59+0000\n"
 "Last-Translator: Stell0 <stefano.fancello@nethesis.it>\n"
 "Language-Team: Italian <http://*/projects/freepbx/miscdests/it/>\n"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Applications"
 msgstr "Applicazioni"
 
-#: Miscdests.class.php:79
+#: Miscdests.class.php:74
 msgid "Delete"
 msgstr "Elimina"
 
@@ -97,7 +97,7 @@ msgstr ""
 msgid "List Misc Destinations"
 msgstr "Elenca destinazioni diverse"
 
-#: Miscdests.class.php:132 functions.inc.php:38
+#: Miscdests.class.php:127 functions.inc.php:38
 #, php-format
 msgid "Misc Destination: %s"
 msgstr "Destinazione: %s"
@@ -127,15 +127,11 @@ msgstr "Prego immettere una Deescrizione valida"
 msgid "Please enter a valid Dial string"
 msgstr "Prego immettere una stringa di chiamata valida"
 
-#: Miscdests.class.php:22
-msgid "Removing Settings table"
-msgstr "Rimozione della tabella delle impostazioni"
-
-#: Miscdests.class.php:84
+#: Miscdests.class.php:79
 msgid "Reset"
 msgstr "Azzera"
 
-#: Miscdests.class.php:89
+#: Miscdests.class.php:84
 msgid "Submit"
 msgstr "Sottoscrivi"
 
@@ -145,6 +141,9 @@ msgid ""
 msgstr ""
 "Questa destinazione è in uso. L'eliminazione potrebbe far sì che le cose non "
 "funzionino correttamente"
+
+#~ msgid "Removing Settings table"
+#~ msgstr "Rimozione della tabella delle impostazioni"
 
 #~ msgid "Misc Destination:"
 #~ msgstr "Destinazione:"

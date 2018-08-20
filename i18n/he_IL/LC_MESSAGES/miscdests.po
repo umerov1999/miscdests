@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 22:48-0400\n"
+"POT-Creation-Date: 2018-08-20 14:26-0400\n"
 "PO-Revision-Date: 2006-10-17 17:30+0300\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "Applications"
 msgstr ""
 
-#: Miscdests.class.php:79
+#: Miscdests.class.php:74
 msgid "Delete"
 msgstr ""
 
@@ -85,7 +85,7 @@ msgstr ""
 msgid "List Misc Destinations"
 msgstr ""
 
-#: Miscdests.class.php:132 functions.inc.php:38
+#: Miscdests.class.php:127 functions.inc.php:38
 #, fuzzy, php-format
 msgid "Misc Destination: %s"
 msgstr "יעד כללי:"
@@ -111,15 +111,11 @@ msgstr ""
 msgid "Please enter a valid Dial string"
 msgstr ""
 
-#: Miscdests.class.php:22
-msgid "Removing Settings table"
-msgstr ""
-
-#: Miscdests.class.php:84
+#: Miscdests.class.php:79
 msgid "Reset"
 msgstr ""
 
-#: Miscdests.class.php:89
+#: Miscdests.class.php:84
 msgid "Submit"
 msgstr ""
 

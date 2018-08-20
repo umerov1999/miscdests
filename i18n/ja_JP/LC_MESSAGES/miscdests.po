@@ -37,15 +37,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 22:48-0400\n"
+"POT-Creation-Date: 2018-08-20 14:26-0400\n"
 "PO-Revision-Date: 2015-07-03 08:18+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
 "miscdests/ja_JP/>\n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
@@ -71,7 +71,7 @@ msgstr ""
 msgid "Applications"
 msgstr "アプリケーション"
 
-#: Miscdests.class.php:79
+#: Miscdests.class.php:74
 msgid "Delete"
 msgstr "削除"
 
@@ -128,7 +128,7 @@ msgstr ""
 msgid "List Misc Destinations"
 msgstr "カスタム宛先を表示"
 
-#: Miscdests.class.php:132 functions.inc.php:38
+#: Miscdests.class.php:127 functions.inc.php:38
 #, php-format
 msgid "Misc Destination: %s"
 msgstr "その他宛先： %s"
@@ -157,15 +157,11 @@ msgstr "有効な説明を入力してください。"
 msgid "Please enter a valid Dial string"
 msgstr "有効な文字列を入力してください。"
 
-#: Miscdests.class.php:22
-msgid "Removing Settings table"
-msgstr "設定のテーブルを削除中"
-
-#: Miscdests.class.php:84
+#: Miscdests.class.php:79
 msgid "Reset"
 msgstr "リセット"
 
-#: Miscdests.class.php:89
+#: Miscdests.class.php:84
 msgid "Submit"
 msgstr "送信"
 
@@ -173,6 +169,9 @@ msgstr "送信"
 msgid ""
 "This destination is in use. Deleting it may cause things to not work properly"
 msgstr "この宛先は使用中です。削除すると、問題が起こる可能性があります"
+
+#~ msgid "Removing Settings table"
+#~ msgstr "設定のテーブルを削除中"
 
 #~ msgid "Language"
 #~ msgstr "言語"

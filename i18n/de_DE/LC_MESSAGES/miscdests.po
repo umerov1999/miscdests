@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 22:48-0400\n"
+"POT-Creation-Date: 2018-08-20 14:26-0400\n"
 "PO-Revision-Date: 2018-07-27 15:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/miscdests/de/>\n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "Applications"
 msgstr "Anwendungen"
 
-#: Miscdests.class.php:79
+#: Miscdests.class.php:74
 msgid "Delete"
 msgstr "Löschen"
 
@@ -88,7 +88,7 @@ msgstr ""
 msgid "List Misc Destinations"
 msgstr ""
 
-#: Miscdests.class.php:132 functions.inc.php:38
+#: Miscdests.class.php:127 functions.inc.php:38
 #, php-format
 msgid "Misc Destination: %s"
 msgstr ""
@@ -113,15 +113,11 @@ msgstr ""
 msgid "Please enter a valid Dial string"
 msgstr ""
 
-#: Miscdests.class.php:22
-msgid "Removing Settings table"
-msgstr ""
-
-#: Miscdests.class.php:84
+#: Miscdests.class.php:79
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: Miscdests.class.php:89
+#: Miscdests.class.php:84
 msgid "Submit"
 msgstr ""
 
