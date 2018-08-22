@@ -15,7 +15,7 @@ class Restore Extends Base\RestoreBase{
     }
     $bmo = $this->FreePBX->Miscdests;
     $bmo->setDatabase($pdo);
-    $data = $bmo->mdlist(true);
+    $configs = $bmo->mdlist(true);
     $bmo->resetDatabase();
     foreach ($configs as $miscdests) {
       $bmo->upsert((int)$miscdests['id'], $miscdests['description'], $miscdests['destdial']);
