@@ -1,28 +1,6 @@
-# This file is part of FreePBX.
-#
-# For licensing information, please see the file named LICENSE located in the module directory
-#
-# FreePBX language template for miscdests
-# Copyright (C) 2008-2017 Sangoma Technologies, Inc.
-#
-msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 14:26-0400\n"
-"PO-Revision-Date: 2018-07-27 15:00+0000\n"
-"Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
-"Language-Team: German <http://*/projects/freepbx/miscdests/de/>\n"
-"Language: de_DE\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
-
 #: views/grid.php:13
 msgid "Actions"
-msgstr "Aktionen"
+msgstr ""
 
 #: page.miscdests.php:19 views/bootnav.php:3 views/grid.php:8
 msgid "Add Misc Destination"
@@ -37,23 +15,23 @@ msgstr ""
 
 #: miscdests.i18n.php:6
 msgid "Applications"
-msgstr "Anwendungen"
+msgstr ""
 
 #: Miscdests.class.php:74
 msgid "Delete"
-msgstr "Löschen"
+msgstr ""
 
 #: views/form.php:23
 msgid "Description:"
-msgstr "Beschreibung:"
+msgstr ""
 
 #: views/grid.php:12
 msgid "Destination"
-msgstr "Ziel"
+msgstr ""
 
 #: views/form.php:45
 msgid "Dial:"
-msgstr "Wählen:"
+msgstr ""
 
 #: page.miscdests.php:16
 msgid "Edit Misc Destination"
@@ -69,7 +47,7 @@ msgstr ""
 
 #: views/bootnav.php:8
 msgid "Extension"
-msgstr "Nebenstelle"
+msgstr ""
 
 #: views/form.php:35
 msgid "Give this Misc Destination a brief name to help you identify it."
@@ -115,7 +93,7 @@ msgstr ""
 
 #: Miscdests.class.php:79
 msgid "Reset"
-msgstr "Zurücksetzen"
+msgstr ""
 
 #: Miscdests.class.php:84
 msgid "Submit"
