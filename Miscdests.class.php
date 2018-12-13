@@ -160,6 +160,24 @@ class Miscdests extends FreePBX_Helpers implements BMO {
 		}
 	}
 
+	public function getallmd($id="") {
+		$db = $this->db;
+		$sql = "SELECT description FROM miscdests";
+		if ($id) {
+			$sql .= " where  id != :id ";
+		}
+		$q = $db->prepare($sql);
+		$ob = $q->execute(array(":id" => $id));
+		$allmd = array();
+		if($q){
+			$results = $q->fetchAll();
+			foreach($results as $result){
+				$allmd[] = $result['description'];
+			}
+		}
+		return $allmd;
+	}
+
 	public function get($id){
 		$db = $this->Database;
 		$sql = "SELECT id, description, destdial FROM miscdests WHERE id = ?";
