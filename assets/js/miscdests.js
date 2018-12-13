@@ -10,11 +10,15 @@ function editMD_onsubmit()
 {
 	var msgInvalidDescription = _('Please enter a valid Description');
 	var msgInvalidDial = _('Please enter a valid Dial string');
+	var msgduplicate = _('Misc Destination already exists');
 
 	defaultEmptyOK = false;
 	
 	if (!isAlphanumeric(theForm.description.value))
 		return warnInvalid(theForm.description, msgInvalidDescription);
+	if (miscdests.indexOf($("#description").val()) >= 0) {
+		return warnInvalid($("#description"),msgduplicate);
+	}
 
 	// go thru text and remove the {} bits so we only check the actual dial digits
 	var fldText = theForm.destdial.value;

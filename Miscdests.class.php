@@ -138,6 +138,24 @@ class Miscdests implements \BMO {
 		}
 	}
 
+	public function getallmd($id="") {
+		$db = $this->db;
+		$sql = "SELECT description FROM miscdests";
+		if ($id) {
+			$sql .= " where  id != :id ";
+		}
+		$q = $db->prepare($sql);
+		$ob = $q->execute(array(":id" => $id));
+		$allmd = array();
+		if($q){
+			$results = $q->fetchAll();
+			foreach($results as $result){
+				$allmd[] = $result['description'];
+			}
+		}
+		return $allmd;
+	}
+
 	public function mdlist() {
 		$db = $this->db;
 		$sql = "SELECT id, description FROM miscdests ORDER BY description";
