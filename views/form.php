@@ -9,7 +9,7 @@ if($extdisplay){
 	$destdial = $thisMiscDest['destdial'] ? $thisMiscDest['destdial']:'';
 }
 ?>
-<form autocomplete="off" class="fpbx-submit" name="editMD" action="config.php?display=miscdests" method="post" data-fpbx-delete="config.php?display=miscdests&amp;extdisplay=<?php echo $extdisplay ?>&amp;action=delete" role="form">
+<form autocomplete="off" class="fpbx-submit" name="editMD" action="config.php?display=miscdests" onsubmit="return editMD_onsubmit()" method="post" data-fpbx-delete="config.php?display=miscdests&amp;extdisplay=<?php echo $extdisplay ?>&amp;action=delete" role="form">
 	<input type="hidden" name="display" value="miscdests">
 	<input type="hidden" name="action" value="<?php echo ($extdisplay ? 'edit' : 'add') ?>">
 	<input type="hidden" name="extdisplay" value="<?php echo $extdisplay; ?>">
@@ -59,3 +59,6 @@ if($extdisplay){
 	</div>
 </div>
 </form>
+<script>
+var miscdests = <?php print json_encode(\FreePBX::Miscdests()->getallmd($extdisplay)); ?>;
+</script>
