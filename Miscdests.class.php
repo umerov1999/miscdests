@@ -159,9 +159,8 @@ class Miscdests extends FreePBX_Helpers implements BMO {
 			return null;
 		}
 	}
-
 	public function getallmd($id="") {
-		$db = $this->db;
+		$db = $this->Database;
 		$sql = "SELECT description FROM miscdests";
 		if ($id) {
 			$sql .= " where  id != :id ";
