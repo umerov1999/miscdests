@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-26 19:54-0400\n"
+"POT-Creation-Date: 2018-12-18 10:50+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -88,6 +88,10 @@ msgstr ""
 msgid "List Misc Destinations"
 msgstr ""
 
+#: assets/js/miscdests.js:13
+msgid "Misc Destination already exists"
+msgstr ""
+
 #: Miscdests.class.php:127
 #: functions.inc.php:38
 #, php-format
@@ -124,7 +128,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: assets/js/miscdests.js:55
+#: assets/js/miscdests.js:59
 msgid ""
 "This destination is in use. Deleting it may cause things to not work properly"
 msgstr ""

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 14:26-0400\n"
+"POT-Creation-Date: 2018-12-18 10:50+0530\n"
 "PO-Revision-Date: 2017-07-10 20:42+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -103,6 +103,10 @@ msgstr ""
 msgid "List Misc Destinations"
 msgstr "Danh sách các điểm đích Misc"
 
+#: assets/js/miscdests.js:13
+msgid "Misc Destination already exists"
+msgstr ""
+
 #: Miscdests.class.php:127 functions.inc.php:38
 #, php-format
 msgid "Misc Destination: %s"
@@ -140,7 +144,7 @@ msgstr "Cài đặt lại"
 msgid "Submit"
 msgstr "Gửi đi"
 
-#: assets/js/miscdests.js:55
+#: assets/js/miscdests.js:59
 msgid ""
 "This destination is in use. Deleting it may cause things to not work properly"
 msgstr ""

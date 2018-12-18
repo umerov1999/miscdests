@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX miscdests\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 14:26-0400\n"
+"POT-Creation-Date: 2018-12-18 10:50+0530\n"
 "PO-Revision-Date: 2008-10-10 22:50+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -90,6 +90,10 @@ msgstr ""
 msgid "List Misc Destinations"
 msgstr ""
 
+#: assets/js/miscdests.js:13
+msgid "Misc Destination already exists"
+msgstr ""
+
 #: Miscdests.class.php:127 functions.inc.php:38
 #, php-format
 msgid "Misc Destination: %s"
@@ -128,7 +132,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: assets/js/miscdests.js:55
+#: assets/js/miscdests.js:59
 msgid ""
 "This destination is in use. Deleting it may cause things to not work properly"
 msgstr ""
