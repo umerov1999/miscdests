@@ -19,15 +19,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 22:48-0400\n"
+"POT-Creation-Date: 2018-12-18 10:43+0530\n"
 "PO-Revision-Date: 2016-02-04 23:02+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/miscdests/"
 "fr_FR/>\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
@@ -103,6 +103,10 @@ msgstr ""
 msgid "List Misc Destinations"
 msgstr "Afficher les destinations diverses"
 
+#: assets/js/miscdests.js:13
+msgid "Misc Destination already exists"
+msgstr ""
+
 #: Miscdests.class.php:132 functions.inc.php:38
 #, php-format
 msgid "Misc Destination: %s"
@@ -146,7 +150,7 @@ msgstr "Réinitialiser"
 msgid "Submit"
 msgstr "Soumettre"
 
-#: assets/js/miscdests.js:55
+#: assets/js/miscdests.js:59
 msgid ""
 "This destination is in use. Deleting it may cause things to not work properly"
 msgstr ""

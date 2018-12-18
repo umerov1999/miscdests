@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 22:48-0400\n"
+"POT-Creation-Date: 2018-12-18 10:43+0530\n"
 "PO-Revision-Date: 2018-07-03 12:08+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/miscdests/bg/>\n"
@@ -102,6 +102,10 @@ msgstr ""
 msgid "List Misc Destinations"
 msgstr "Списък Други Направления"
 
+#: assets/js/miscdests.js:13
+msgid "Misc Destination already exists"
+msgstr ""
+
 #: Miscdests.class.php:132 functions.inc.php:38
 #, php-format
 msgid "Misc Destination: %s"
@@ -144,7 +148,7 @@ msgstr "Изчисти"
 msgid "Submit"
 msgstr "Приеми"
 
-#: assets/js/miscdests.js:55
+#: assets/js/miscdests.js:59
 msgid ""
 "This destination is in use. Deleting it may cause things to not work properly"
 msgstr "Това направление се използва. Изтриването може да доведе до проблеми"
