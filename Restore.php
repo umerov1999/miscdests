@@ -8,7 +8,7 @@ class Restore Extends Base\RestoreBase{
 				$this->FreePBX->Miscdests->upsert((int)$miscdests['id'], $miscdests['description'], $miscdests['destdial']);
 		}
 	}
-	public function processLegacy($pdo, $data, $tables, $unknownTables, $tmpfiledir){
+	public function processLegacy($pdo, $data, $tables, $unknownTables){
 		$this->restoreLegacyDatabase($pdo);
 	}
 }
