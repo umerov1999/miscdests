@@ -276,13 +276,4 @@ class Miscdests extends FreePBX_Helpers implements BMO {
 		}
     return $html;
 	}
-	public function setDatabase($pdo){
-	$this->Database = $pdo;
-	return $this;
-	}
-	
-	public function resetDatabase(){
-	$this->Database = $this->FreePBX->Database;
-	return $this;
-	}
 }
