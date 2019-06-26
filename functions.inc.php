@@ -36,7 +36,7 @@ function miscdests_getdestinfo($dest) {
 			//$type = isset($active_modules['announcement']['type'])?$active_modules['announcement']['type']:'setup';
 			return array(
 				'description' => sprintf(_("Misc Destination: %s"),$thisexten['description']),
-				'edit_url' => 'config.php?display=miscdestsview=form&&id='.urlencode($exten),
+				'edit_url' => 'config.php?display=miscdests&view=form&extdisplay='.urlencode($exten),
 			);
 		}
 	} else {
