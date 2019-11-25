@@ -7,7 +7,7 @@
 <div id="toolbar-all">
 	<a href="config.php?display=miscdests&amp;view=form" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp; <?php echo _("Add Misc Destination") ?></a>
 </div>
-<table id="miscdestgrid" data-toolbar="#toolbar-all" data-maintain-selected="true" data-url="<?php echo $dataurl?>" data-show-columns="true" data-show-toggle="true" data-toggle="table" data-pagination="true" data-search="true" class="table table-striped">
+<table id="miscdestgrid" data-escape="true" data-toolbar="#toolbar-all" data-maintain-selected="true" data-url="<?php echo $dataurl?>" data-show-columns="true" data-show-toggle="true" data-toggle="table" data-pagination="true" data-search="true" class="table table-striped">
 	<thead>
 		<th data-field='description'><?php echo _("Destination")?></th>
 		<th data-field='id' data-formatter="linkFormatter"><?php echo _("Actions")?></th>
