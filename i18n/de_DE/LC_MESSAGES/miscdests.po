@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-18 10:43+0530\n"
-"PO-Revision-Date: 2018-11-10 21:00+0000\n"
-"Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
+"PO-Revision-Date: 2020-01-28 09:51+0000\n"
+"Last-Translator: florian alberts <alberts@ar-systems.de>\n"
 "Language-Team: German <http://*/projects/freepbx/miscdests/de/>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
@@ -92,6 +92,12 @@ msgid ""
 "configured such a destination, it will still work but the Feature Code short "
 "cuts select list is not longer provided.<br/><br/>"
 msgstr ""
+"Wenn Sie Zugriff auf einen Funktionscode benötigen, wie * 98 zum Wählen von "
+"Voicemail oder zum Umschalten der Zeitbedingung, werden diese Ziele jetzt "
+"als Funktionscode-Verwaltungsziele bereitgestellt. Wenn Sie zuvor ein "
+"solches Ziel konfiguriert haben, funktioniert es aus Gründen der Upgrade-"
+"Kompatibilität weiterhin, aber die Auswahlliste mit den Funktionscode-"
+"Verknüpfungen wird nicht mehr angezeigt. <br/> <br/>"
 
 #: views/bootnav.php:2
 msgid "List Misc Destinations"
@@ -99,7 +105,7 @@ msgstr "Sonstige Ziele auflisten"
 
 #: assets/js/miscdests.js:13
 msgid "Misc Destination already exists"
-msgstr ""
+msgstr "Sonstiges Ziel ist bereits vorhanden"
 
 #: Miscdests.class.php:132 functions.inc.php:38
 #, php-format
@@ -117,6 +123,11 @@ msgid ""
 "create feature codes that can be dialed by internal users and go to various "
 "destinations, please see the <strong>Misc Applications</strong> module."
 msgstr ""
+"\"Verschiedene Ziele\" dienen zum Hinzufügen von Zielen, die von anderen "
+"FreePBX-Modulen verwendet werden können, um eingehende Anrufe "
+"weiterzuleiten. Wenn Sie Funktionscodes erstellen möchten, die von internen "
+"Benutzern gewählt werden können, und verschiedene Ziele ansteuern möchten, "
+"lesen Sie das Modul <strong>Verschiedene Anwendungen</strong>."
 
 #: assets/js/miscdests.js:11
 msgid "Please enter a valid Description"
@@ -124,7 +135,7 @@ msgstr "Bitte geben Sie eine gültige Beschreibung ein"
 
 #: assets/js/miscdests.js:12
 msgid "Please enter a valid Dial string"
-msgstr ""
+msgstr "Bitte geben Sie eine gültige Wählzeichenfolge ein"
 
 #: Miscdests.class.php:22
 msgid "Removing Settings table"
