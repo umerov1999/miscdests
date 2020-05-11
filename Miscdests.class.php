@@ -212,7 +212,7 @@ class Miscdests implements \BMO {
 		debug('*******Update ID: ' . $id . 'description / destdial = ' . $description . ' / ' . $destdial);
 		$q = $db->prepare($sql);
 		$q->execute(array($description,trim($destdial),$id));
-		if(q){
+		if($q){
 			debug($q->rowCount());
 			return $q->rowCount();
 		}
