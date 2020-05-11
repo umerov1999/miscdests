@@ -2,13 +2,14 @@
 	<rawname>miscdests</rawname>
 	<repo>extended</repo>
 	<name>Misc Destinations</name>
-	<version>15.0.2.9</version>
+	<version>15.0.2.10</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<category>Applications</category>
 	<description>Allows creating destinations that dial any local number (extensions, feature codes, outside phone numbers) that can be used by other modules (eg, IVR, time conditions) as a call destination.</description>
 	<changelog>
+		*15.0.2.10* Fixing FREEPBX-21504 
 		*15.0.2.9* FREEI-922 Fix XSS Bootstrap Datatable Issues 
 		*15.0.2.8* FREEPBX-20414: removed $jobid from runRestore 
 		*15.0.2.7* FREEPBX-20123 Misc destination module not working correctly 
