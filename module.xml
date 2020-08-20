@@ -2,7 +2,7 @@
 	<rawname>miscdests</rawname>
 	<repo>extended</repo>
 	<name>Misc Destinations</name>
-	<version>13.0.10</version>
+	<version>13.0.11</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<description>Allows creating destinations that dial any local number (extensions, feature codes, outside phone numbers) that can be used by other modules (eg, IVR, time conditions) as a call destination.</description>
   	<more-info>https://wiki.freepbx.org/display/F2/Misc+Destinations</more-info>
 	<changelog>
+		*13.0.11* Packaging of ver 13.0.11
 		*13.0.10* Fixing FREEPBX-21504 
 		*13.0.9* FREEI-922 Fix XSS Bootstrap Datatable Issues 
 		*13.0.8* FREEPBX-20123 Misc destination module not working correctly 
