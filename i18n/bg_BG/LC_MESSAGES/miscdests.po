@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-18 10:43+0530\n"
-"PO-Revision-Date: 2018-07-03 12:08+0000\n"
+"PO-Revision-Date: 2021-07-04 04:45+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
-"Language-Team: Bulgarian <http://*/projects/freepbx/miscdests/bg/>\n"
+"Language-Team: Bulgarian <http://weblate.freepbx.org/projects/freepbx/"
+"miscdests/bg/>\n"
 "Language: bg_BG\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.19.1\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Poedit-Language: Bulgarian\n"
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -104,7 +105,7 @@ msgstr "Списък Други Направления"
 
 #: assets/js/miscdests.js:13
 msgid "Misc Destination already exists"
-msgstr ""
+msgstr "Друго Направление вече съществува"
 
 #: Miscdests.class.php:132 functions.inc.php:38
 #, php-format
