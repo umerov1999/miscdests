@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-18 10:43+0530\n"
-"PO-Revision-Date: 2021-11-23 08:00+0000\n"
+"PO-Revision-Date: 2021-11-24 11:00+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
 "miscdests/ru/>\n"
@@ -53,7 +53,7 @@ msgstr "Описание:"
 
 #: views/grid.php:12
 msgid "Destination"
-msgstr ""
+msgstr "Назначение"
 
 #: views/form.php:45
 msgid "Dial:"
