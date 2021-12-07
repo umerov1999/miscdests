@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-18 10:43+0530\n"
-"PO-Revision-Date: 2021-11-24 11:00+0000\n"
+"PO-Revision-Date: 2021-12-07 05:36+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
 "miscdests/ru/>\n"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: views/bootnav.php:8
 msgid "Extension"
-msgstr ""
+msgstr "Внутренний номер"
 
 #: views/form.php:35
 msgid "Give this Misc Destination a brief name to help you identify it."
@@ -90,6 +90,12 @@ msgid ""
 "configured such a destination, it will still work but the Feature Code short "
 "cuts select list is not longer provided.<br/><br/>"
 msgstr ""
+"Если вам нужен доступ к Сервисному коду, например *98 для набора голосовой "
+"почты или переключения Правил по времени, эти пункты назначения теперь "
+"предоставляются в качестве пунктов назначения администратора Сервисных "
+"кодов. Для совместимости с обновлением, если вы ранее настроили такое "
+"назначение, оно все равно будет работать, но список выбора сокращений "
+"Сервисных кодов больше не предоставляется.<br/><br/>"
 
 #: views/bootnav.php:2
 msgid "List Misc Destinations"
@@ -97,7 +103,7 @@ msgstr "Список разных направлений"
 
 #: assets/js/miscdests.js:13
 msgid "Misc Destination already exists"
-msgstr ""
+msgstr "Другое назначение уже существует"
 
 #: Miscdests.class.php:132 functions.inc.php:38
 #, php-format
