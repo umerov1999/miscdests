@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-18 10:43+0530\n"
-"PO-Revision-Date: 2021-12-07 05:36+0000\n"
+"PO-Revision-Date: 2021-12-08 06:03+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
 "miscdests/ru/>\n"
@@ -26,7 +26,7 @@ msgstr "Действия"
 
 #: page.miscdests.php:19 views/bootnav.php:3 views/grid.php:8
 msgid "Add Misc Destination"
-msgstr "Добавить Дополнительное направление"
+msgstr "Добавить другое назначение"
 
 #: miscdests.i18n.php:8
 msgid ""
@@ -61,7 +61,7 @@ msgstr "Набирать:"
 
 #: page.miscdests.php:16
 msgid "Edit Misc Destination"
-msgstr "Изменить Дополнительное направление"
+msgstr "Изменить другое назначение"
 
 #: views/form.php:57
 msgid ""
@@ -70,9 +70,10 @@ msgid ""
 "destination, it will be as if the caller dialed this number from an internal "
 "phone."
 msgstr ""
-"Набрав этот номер вы симулируете набор прямо в созданное направление. Когда "
-"добавляете это направление в сценариях маршрутизации, то поведение в "
-"направлении будет точно такое же, как будто набран этот внутренний номер."
+"Введите номер, который имитировать набор точно так же, как если бы вы "
+"набирали бы его с внутреннего телефона. Когда вы перенаправляете вызов в это "
+"назначение, это будет выглядеть так, как если бы абонент набрал этот номер с "
+"внутреннего телефона."
 
 #: views/bootnav.php:8
 msgid "Extension"
@@ -80,7 +81,7 @@ msgstr "Внутренний номер"
 
 #: views/form.php:35
 msgid "Give this Misc Destination a brief name to help you identify it."
-msgstr "Присвойте этому направлению короткое название для идентификации."
+msgstr "Присвойте этому другому назначению короткое название для идентификации."
 
 #: page.miscdests.php:9
 msgid ""
@@ -99,7 +100,7 @@ msgstr ""
 
 #: views/bootnav.php:2
 msgid "List Misc Destinations"
-msgstr "Список разных направлений"
+msgstr "Список Других назначений"
 
 #: assets/js/miscdests.js:13
 msgid "Misc Destination already exists"
@@ -108,11 +109,11 @@ msgstr "Другое назначение уже существует"
 #: Miscdests.class.php:132 functions.inc.php:38
 #, php-format
 msgid "Misc Destination: %s"
-msgstr "Дополнительное направление: %s"
+msgstr "Другое назначение: %s"
 
 #: miscdests.i18n.php:4 miscdests.i18n.php:10 page.miscdests.php:8
 msgid "Misc Destinations"
-msgstr "Дополнительные назначения"
+msgstr "Другие назначения"
 
 #: page.miscdests.php:9
 msgid ""
@@ -121,11 +122,12 @@ msgid ""
 "create feature codes that can be dialed by internal users and go to various "
 "destinations, please see the <strong>Misc Applications</strong> module."
 msgstr ""
-"Этот модуль добавляет Дополнительные направления, которые можно затем "
-"использовать в других модулях FreePBX, в том числе для маршрутизации "
-"входящих звонков. Для создания сервисного кода, набрав который можно попасть "
-"прямо в это созданное направление, воспользуйтесь секцией "
-"<strong>Дополнительные приложения</strong>."
+"Другие назначения предназначены для добавления пунктов назначения, которые "
+"могут использоваться другими модулями FreePBX, обычно используемыми для "
+"маршрутизации входящих вызовов. Если вы хотите создать коды функций, которые "
+"могут быть набраны внутренними пользователями и отправлены в различные "
+"назначения, пожалуйста, обратитесь к модулю <strong>Другие "
+"приложения</strong>."
 
 #: assets/js/miscdests.js:11
 msgid "Please enter a valid Description"
@@ -151,8 +153,8 @@ msgstr "Применить"
 msgid ""
 "This destination is in use. Deleting it may cause things to not work properly"
 msgstr ""
-"Это назначение используется. Удаление может привести к неработоспособности "
-"этого"
+"Это назначение используется. Его удаление может привести к неправильной "
+"работе"
 
 #~ msgid "Language"
 #~ msgstr "Язык"
