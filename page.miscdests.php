@@ -28,7 +28,7 @@ switch ($view) {
 ?>
 
 <div class="container-fluid">
-	<h1><?php echo $heading?></h1>
+	<h1><?php echo $heading ?? ''; ?></h1>
 	<?php echo $usagehtml?>
 	<div class="well well-info">
 		<?php echo $helptext?>
