@@ -166,7 +166,11 @@ class Miscdests extends FreePBX_Helpers implements BMO {
 			$sql .= " where  id != :id ";
 		}
 		$q = $db->prepare($sql);
-		$ob = $q->execute(array(":id" => $id));
+		if ($id) {
+			$ob = $q->execute(array(":id" => $id));
+		}else {
+			$ob = $q->execute();
+		}
 		$allmd = array();
 		if($q){
 			$results = $q->fetchAll();
